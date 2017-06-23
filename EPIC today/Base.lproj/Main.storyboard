@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hLr-61-LtP">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EPIC_today" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yte-PG-YLs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qjM-RG-ki9">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                    </imageView>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-zc-e70">
+                                        <rect key="frame" x="178" y="292" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="qjM-RG-ki9" secondAttribute="bottom" id="I5v-7s-CjS"/>
+                                    <constraint firstItem="8HQ-zc-e70" firstAttribute="centerX" secondItem="qjM-RG-ki9" secondAttribute="centerX" id="JEy-3s-hgd"/>
+                                    <constraint firstItem="8HQ-zc-e70" firstAttribute="centerY" secondItem="qjM-RG-ki9" secondAttribute="centerY" id="TLt-Q0-qmy"/>
+                                    <constraint firstAttribute="trailing" secondItem="qjM-RG-ki9" secondAttribute="trailing" id="eYJ-Bb-1sV"/>
+                                    <constraint firstItem="qjM-RG-ki9" firstAttribute="leading" secondItem="Yte-PG-YLs" secondAttribute="leading" id="mlv-2X-NsN"/>
+                                    <constraint firstItem="qjM-RG-ki9" firstAttribute="centerX" secondItem="Yte-PG-YLs" secondAttribute="centerX" id="sCt-8j-799"/>
+                                    <constraint firstItem="qjM-RG-ki9" firstAttribute="centerY" secondItem="Yte-PG-YLs" secondAttribute="centerY" id="t4H-wv-RTF"/>
+                                    <constraint firstItem="qjM-RG-ki9" firstAttribute="top" secondItem="Yte-PG-YLs" secondAttribute="top" id="tVi-H8-xIn"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="yUf-3I-IwF"/>
+                                    <outletCollection property="gestureRecognizers" destination="37V-oE-QtA" appends="YES" id="b1Q-5j-hCv"/>
+                                </connections>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Yte-PG-YLs" secondAttribute="trailing" id="VNX-y8-JKG"/>
+                            <constraint firstItem="Yte-PG-YLs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zyt-Yr-vAT"/>
+                            <constraint firstItem="Yte-PG-YLs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="c9D-4a-Hw5"/>
+                            <constraint firstItem="Yte-PG-YLs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tD9-Df-Ph6"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="koe-UZ-oDt">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="wMW-c1-GqL"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="lmG-mO-yix"/>
+                    </navigationItem>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageActivityIndicator" destination="8HQ-zc-e70" id="sc8-6g-EMQ"/>
+                        <outlet property="imageView" destination="qjM-RG-ki9" id="eQb-oY-gWP"/>
+                        <outlet property="scrollView" destination="Yte-PG-YLs" id="aY5-ZK-V5p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer numberOfTapsRequired="2" id="37V-oE-QtA">
+                    <connections>
+                        <action selector="handleDoubleTapScrollViewWithRecognizer:" destination="BYZ-38-t0r" id="Uj0-7n-t7o"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="514.39999999999998" y="110.19490254872565"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="bQC-Xw-df8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hLr-61-LtP" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="1vs-YD-uRH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="t06-kI-sh2"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBO-nZ-Qfj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-249" y="110"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03BA31C00B3D080C21640097 /* Pods_EPIC_today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A25CC6121110E0EA5D5DB9 /* Pods_EPIC_today.framework */; };
+		FB2AD49A1EFB0FBC009045A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */; };
+		FB2AD49C1EFB0FBC009045A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */; };
+		FB2AD49F1EFB0FBC009045A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */; };
+		FB2AD4A11EFB0FBC009045A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */; };
+		FB2AD4A41EFB0FBC009045A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0BD08B618E563037A23B7ECD /* Pods-EPIC today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPIC today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EPIC today/Pods-EPIC today.debug.xcconfig"; sourceTree = "<group>"; };
+		CBD2202085C0264CC92236EE /* Pods-EPIC today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPIC today.release.xcconfig"; path = "Pods/Target Support Files/Pods-EPIC today/Pods-EPIC today.release.xcconfig"; sourceTree = "<group>"; };
+		D0A25CC6121110E0EA5D5DB9 /* Pods_EPIC_today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EPIC_today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB2AD4961EFB0FBC009045A4 /* EPIC today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EPIC today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FB2AD49E1EFB0FBC009045A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FB2AD4A31EFB0FBC009045A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FB2AD4A51EFB0FBC009045A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FB2AD4931EFB0FBC009045A4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				03BA31C00B3D080C21640097 /* Pods_EPIC_today.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1EDE984CE9614292DA2BA46C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D0A25CC6121110E0EA5D5DB9 /* Pods_EPIC_today.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		85F82A62DD6D97F6CC953E08 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BD08B618E563037A23B7ECD /* Pods-EPIC today.debug.xcconfig */,
+				CBD2202085C0264CC92236EE /* Pods-EPIC today.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		FB2AD48D1EFB0FBC009045A4 = {
+			isa = PBXGroup;
+			children = (
+				FB2AD4981EFB0FBC009045A4 /* EPIC today */,
+				FB2AD4971EFB0FBC009045A4 /* Products */,
+				85F82A62DD6D97F6CC953E08 /* Pods */,
+				1EDE984CE9614292DA2BA46C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		FB2AD4971EFB0FBC009045A4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FB2AD4961EFB0FBC009045A4 /* EPIC today.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FB2AD4981EFB0FBC009045A4 /* EPIC today */ = {
+			isa = PBXGroup;
+			children = (
+				FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */,
+				FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */,
+				FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */,
+				FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */,
+				FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */,
+				FB2AD4A51EFB0FBC009045A4 /* Info.plist */,
+			);
+			path = "EPIC today";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FB2AD4951EFB0FBC009045A4 /* EPIC today */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FB2AD4A81EFB0FBC009045A4 /* Build configuration list for PBXNativeTarget "EPIC today" */;
+			buildPhases = (
+				F6FFD80EF4DE5E086163A08D /* [CP] Check Pods Manifest.lock */,
+				FB2AD4921EFB0FBC009045A4 /* Sources */,
+				FB2AD4931EFB0FBC009045A4 /* Frameworks */,
+				FB2AD4941EFB0FBC009045A4 /* Resources */,
+				07FD562BDDB9C85832B78530 /* [CP] Embed Pods Frameworks */,
+				C43705A0203463961089BEDC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "EPIC today";
+			productName = "EPIC today";
+			productReference = FB2AD4961EFB0FBC009045A4 /* EPIC today.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FB2AD48E1EFB0FBC009045A4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Mialin Valentin";
+				TargetAttributes = {
+					FB2AD4951EFB0FBC009045A4 = {
+						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = M6RU8K5R5C;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = FB2AD4911EFB0FBC009045A4 /* Build configuration list for PBXProject "EPIC today" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FB2AD48D1EFB0FBC009045A4;
+			productRefGroup = FB2AD4971EFB0FBC009045A4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FB2AD4951EFB0FBC009045A4 /* EPIC today */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FB2AD4941EFB0FBC009045A4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB2AD4A41EFB0FBC009045A4 /* LaunchScreen.storyboard in Resources */,
+				FB2AD4A11EFB0FBC009045A4 /* Assets.xcassets in Resources */,
+				FB2AD49F1EFB0FBC009045A4 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07FD562BDDB9C85832B78530 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EPIC today/Pods-EPIC today-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C43705A0203463961089BEDC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-EPIC today/Pods-EPIC today-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F6FFD80EF4DE5E086163A08D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FB2AD4921EFB0FBC009045A4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB2AD49C1EFB0FBC009045A4 /* ViewController.swift in Sources */,
+				FB2AD49A1EFB0FBC009045A4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB2AD49E1EFB0FBC009045A4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB2AD4A31EFB0FBC009045A4 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FB2AD4A61EFB0FBC009045A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FB2AD4A71EFB0FBC009045A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FB2AD4A91EFB0FBC009045A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BD08B618E563037A23B7ECD /* Pods-EPIC today.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M6RU8K5R5C;
+				INFOPLIST_FILE = "EPIC today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mialin.EPIC-today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		FB2AD4AA1EFB0FBC009045A4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBD2202085C0264CC92236EE /* Pods-EPIC today.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = M6RU8K5R5C;
+				INFOPLIST_FILE = "EPIC today/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "mialin.EPIC-today";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FB2AD4911EFB0FBC009045A4 /* Build configuration list for PBXProject "EPIC today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB2AD4A61EFB0FBC009045A4 /* Debug */,
+				FB2AD4A71EFB0FBC009045A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FB2AD4A81EFB0FBC009045A4 /* Build configuration list for PBXNativeTarget "EPIC today" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FB2AD4A91EFB0FBC009045A4 /* Debug */,
+				FB2AD4AA1EFB0FBC009045A4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = FB2AD48E1EFB0FBC009045A4 /* Project object */;
+}
