@@ -29,7 +29,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                     </imageView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-zc-e70">
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-zc-e70">
                                         <rect key="frame" x="178" y="292" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -61,7 +61,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="koe-UZ-oDt">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="wMW-c1-GqL"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="lmG-mO-yix"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="lmG-mO-yix">
+                            <connections>
+                                <action selector="shareButton:" destination="BYZ-38-t0r" id="twZ-vO-4PB"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>

@@ -36,5 +36,7 @@
 	</array>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>ФФФ</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Доступ к медиатеки необходим для сохранения фотографии</string>
 </dict>
 </plist>

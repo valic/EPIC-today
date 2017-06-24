@@ -120,9 +120,11 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         
         var epicArray = [epic]()
         
-        let url = URL(string: "https://api.nasa.gov/EPIC/api/natural/?api_key=zy0Q17y4wvS2SDDmNSxPgaKq7nFIbaCJmza4t7Qs")!
+        let url = URL(string: "https://api.nasa.gov/EPIC/api/natural/")!
         
-        Alamofire.request(url, method: .get).validate().responseJSON { response in
+        //self.imageActivityIndicator.startAnimating()
+        
+        Alamofire.request(url, method: .get, parameters: ["api_key": "zy0Q17y4wvS2SDDmNSxPgaKq7nFIbaCJmza4t7Qs"]).validate().responseJSON { response in
             switch response.result {
             case .success(let value):
                 let json = JSON(value)
@@ -198,5 +200,25 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         loadImage()
     }
     
+    //MARK: Share
+    @IBAction func shareButton(_ sender: Any) {
+        
+        // image to share
+        if let imageToShare = self.imageView.image {
+        
+        let shareText = "Изображение земли"
+            
+        // set up activity view controller
+        let activityViewController = UIActivityViewController(activityItems: [imageToShare, shareText], applicationActivities: nil)
+        //activityViewController.popoverPresentationController?.sourceView = self.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+      //  activityViewController.excludedActivityTypes = [ UIActivityType.airDrop, UIActivityType.postToFacebook ]
+        
+        // present the view controller
+        self.present(activityViewController, animated: true, completion: nil)
+        }
+        
+    }
 }
 
