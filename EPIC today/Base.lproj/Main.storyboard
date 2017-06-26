@@ -6,10 +6,11 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="EPIC_today" customModuleProvider="target" sceneMemberID="viewController">
@@ -50,18 +51,82 @@
                                     <outletCollection property="gestureRecognizers" destination="37V-oE-QtA" appends="YES" id="b1Q-5j-hCv"/>
                                 </connections>
                             </scrollView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38Y-BB-ZiE">
+                                <rect key="frame" x="16" y="495" width="343" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to Earth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhd-yH-mpW">
+                                        <rect key="frame" x="8" y="8" width="137" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,546,445 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-D3-JGa">
+                                        <rect key="frame" x="149" y="8" width="105" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to Sun:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Ur-uKc">
+                                        <rect key="frame" x="8" y="37" width="126" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,546,445 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O38-dH-qxV">
+                                        <rect key="frame" x="138" y="37" width="105" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEV Angle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-Gt-I0R">
+                                        <rect key="frame" x="8" y="66" width="85" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.95°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-w4-IaO">
+                                        <rect key="frame" x="97" y="66" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="p0Y-w4-IaO" firstAttribute="baseline" secondItem="PAO-Gt-I0R" secondAttribute="baseline" id="HkR-1U-HtU"/>
+                                    <constraint firstItem="7q4-Ur-uKc" firstAttribute="leading" secondItem="Jhd-yH-mpW" secondAttribute="leading" id="LBi-MV-7FV"/>
+                                    <constraint firstItem="Jhd-yH-mpW" firstAttribute="leading" secondItem="38Y-BB-ZiE" secondAttribute="leadingMargin" id="LU6-zJ-qJO"/>
+                                    <constraint firstAttribute="height" constant="100" id="Off-wp-KE3"/>
+                                    <constraint firstItem="Jhd-yH-mpW" firstAttribute="top" secondItem="38Y-BB-ZiE" secondAttribute="topMargin" id="QBS-Rr-Xe3"/>
+                                    <constraint firstItem="p0Y-w4-IaO" firstAttribute="leading" secondItem="PAO-Gt-I0R" secondAttribute="trailing" constant="4" id="QSG-5y-Umb"/>
+                                    <constraint firstItem="p0Y-w4-IaO" firstAttribute="top" secondItem="O38-dH-qxV" secondAttribute="bottom" constant="8" symbolic="YES" id="ZKy-wD-CLT"/>
+                                    <constraint firstItem="lY1-D3-JGa" firstAttribute="baseline" secondItem="Jhd-yH-mpW" secondAttribute="baseline" id="gkn-65-nrW"/>
+                                    <constraint firstItem="lY1-D3-JGa" firstAttribute="leading" secondItem="Jhd-yH-mpW" secondAttribute="trailing" constant="4" id="izs-xY-tPf"/>
+                                    <constraint firstItem="O38-dH-qxV" firstAttribute="top" secondItem="lY1-D3-JGa" secondAttribute="bottom" constant="8" symbolic="YES" id="nYd-vm-xip"/>
+                                    <constraint firstItem="O38-dH-qxV" firstAttribute="baseline" secondItem="7q4-Ur-uKc" secondAttribute="baseline" id="ry0-r5-DVE"/>
+                                    <constraint firstItem="O38-dH-qxV" firstAttribute="leading" secondItem="7q4-Ur-uKc" secondAttribute="trailing" constant="4" id="sqe-be-Lud"/>
+                                    <constraint firstItem="PAO-Gt-I0R" firstAttribute="leading" secondItem="7q4-Ur-uKc" secondAttribute="leading" id="wbE-Y0-d8m"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="38Y-BB-ZiE" secondAttribute="bottom" constant="8" id="BkM-2H-H76"/>
                             <constraint firstAttribute="trailing" secondItem="Yte-PG-YLs" secondAttribute="trailing" id="VNX-y8-JKG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="38Y-BB-ZiE" secondAttribute="trailing" id="Wik-xX-1x1"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zyt-Yr-vAT"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="c9D-4a-Hw5"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="38Y-BB-ZiE" secondAttribute="leading" id="eSt-rU-lxz"/>
+                            <constraint firstItem="38Y-BB-ZiE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rEz-Sf-d7Z"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tD9-Df-Ph6"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="koe-UZ-oDt">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="wMW-c1-GqL"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="lmG-mO-yix">
+                    <navigationItem key="navigationItem" id="koe-UZ-oDt">
+                        <barButtonItem key="leftBarButtonItem" image="information" id="wMW-c1-GqL">
+                            <connections>
+                                <action selector="infoButton:" destination="BYZ-38-t0r" id="M10-Cd-9W8"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="lmG-mO-yix">
                             <connections>
                                 <action selector="shareButton:" destination="BYZ-38-t0r" id="twZ-vO-4PB"/>
                             </connections>
@@ -69,9 +134,13 @@
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="distanceToEarthLabbel" destination="lY1-D3-JGa" id="8rg-bt-TfC"/>
+                        <outlet property="distanceToSunLabbel" destination="O38-dH-qxV" id="V9W-sL-2P6"/>
                         <outlet property="imageActivityIndicator" destination="8HQ-zc-e70" id="sc8-6g-EMQ"/>
                         <outlet property="imageView" destination="qjM-RG-ki9" id="eQb-oY-gWP"/>
+                        <outlet property="infoView" destination="38Y-BB-ZiE" id="AyI-tz-hHT"/>
                         <outlet property="scrollView" destination="Yte-PG-YLs" id="aY5-ZK-V5p"/>
+                        <outlet property="sevAngleLabel" destination="p0Y-w4-IaO" id="nZp-Ep-23f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -103,4 +172,7 @@
             <point key="canvasLocation" x="-249" y="110"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="information" width="25" height="25"/>
+    </resources>
 </document>
