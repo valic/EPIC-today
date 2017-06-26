@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -121,11 +122,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="koe-UZ-oDt">
-                        <barButtonItem key="leftBarButtonItem" image="information" id="wMW-c1-GqL">
-                            <connections>
-                                <action selector="infoButton:" destination="BYZ-38-t0r" id="M10-Cd-9W8"/>
-                            </connections>
-                        </barButtonItem>
+                        <leftBarButtonItems>
+                            <barButtonItem image="information" style="done" id="wMW-c1-GqL">
+                                <connections>
+                                    <action selector="infoButton:" destination="BYZ-38-t0r" id="M10-Cd-9W8"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="Earth" style="done" id="ALp-Eo-kgO"/>
+                        </leftBarButtonItems>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="lmG-mO-yix">
                             <connections>
                                 <action selector="shareButton:" destination="BYZ-38-t0r" id="twZ-vO-4PB"/>
@@ -173,6 +177,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Earth" width="25" height="25"/>
         <image name="information" width="25" height="25"/>
     </resources>
 </document>
