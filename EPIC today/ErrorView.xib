@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ErrorSubview" customModule="EPIC_today" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud error" translatesAutoresizingMaskIntoConstraints="NO" id="PHD-Pq-hPt">
+                    <rect key="frame" x="137.5" y="233.5" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="4Qd-Ci-EH2"/>
+                        <constraint firstAttribute="width" constant="100" id="zsY-Fy-FOr"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error string" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HRE-CH-xgR">
+                    <rect key="frame" x="8" y="340.5" width="359" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HrA-P5-fHM">
+                    <rect key="frame" x="163.5" y="412.5" width="47" height="30"/>
+                    <state key="normal" title="Reload"/>
+                    <connections>
+                        <action selector="reloadButton:" destination="iN0-l3-epB" eventType="touchUpInside" id="u5k-kq-rln"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="PHD-Pq-hPt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="5gu-eL-2GF"/>
+                <constraint firstItem="PHD-Pq-hPt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-50" id="Edw-G3-Myq"/>
+                <constraint firstItem="HRE-CH-xgR" firstAttribute="top" secondItem="PHD-Pq-hPt" secondAttribute="bottom" constant="7.5" id="PpT-QW-gkG"/>
+                <constraint firstItem="HRE-CH-xgR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="W98-Bw-e7W"/>
+                <constraint firstItem="HrA-P5-fHM" firstAttribute="top" secondItem="HRE-CH-xgR" secondAttribute="bottom" constant="51" id="bux-WY-fD8"/>
+                <constraint firstAttribute="trailing" secondItem="HRE-CH-xgR" secondAttribute="trailing" constant="8" id="gsj-Uu-yBU"/>
+                <constraint firstItem="HrA-P5-fHM" firstAttribute="centerX" secondItem="HRE-CH-xgR" secondAttribute="centerX" id="uEN-n3-7XZ"/>
+            </constraints>
+            <connections>
+                <outlet property="errorStringLabel" destination="HRE-CH-xgR" id="WFE-rA-Q94"/>
+                <outlet property="reloadButton" destination="HrA-P5-fHM" id="Q4Q-si-Pvn"/>
+            </connections>
+        </view>
+    </objects>
+    <resources>
+        <image name="Cloud error" width="100" height="100"/>
+    </resources>
+</document>

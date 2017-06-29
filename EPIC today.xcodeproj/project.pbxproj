@@ -13,6 +13,8 @@
 		FB2AD49F1EFB0FBC009045A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */; };
 		FB2AD4A11EFB0FBC009045A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */; };
 		FB2AD4A41EFB0FBC009045A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */; };
+		FB786BBC1F05AA7D0010C6CC /* ErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FB786BBB1F05AA7D0010C6CC /* ErrorView.xib */; };
+		FB786BC01F05B6860010C6CC /* ErrorSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB2AD4A31EFB0FBC009045A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB2AD4A51EFB0FBC009045A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB786BBB1F05AA7D0010C6CC /* ErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorView.xib; sourceTree = "<group>"; };
+		FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSubview.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */,
 				FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */,
 				FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */,
+				FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */,
+				FB786BBB1F05AA7D0010C6CC /* ErrorView.xib */,
 				FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */,
 				FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */,
 				FB2AD4A51EFB0FBC009045A4 /* Info.plist */,
@@ -154,6 +160,7 @@
 				FB2AD4A41EFB0FBC009045A4 /* LaunchScreen.storyboard in Resources */,
 				FB2AD4A11EFB0FBC009045A4 /* Assets.xcassets in Resources */,
 				FB2AD49F1EFB0FBC009045A4 /* Main.storyboard in Resources */,
+				FB786BBC1F05AA7D0010C6CC /* ErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB2AD49C1EFB0FBC009045A4 /* ViewController.swift in Sources */,
+				FB786BC01F05B6860010C6CC /* ErrorSubview.swift in Sources */,
 				FB2AD49A1EFB0FBC009045A4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
