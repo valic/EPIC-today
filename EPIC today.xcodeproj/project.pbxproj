@@ -85,13 +85,21 @@
 				FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */,
 				FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */,
 				FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */,
-				FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */,
-				FBF236611F0A55B300D6F05A /* ErrorSubview.xib */,
+				FB8FD02D1F0B00B800705A3B /* ErrorSubview */,
 				FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */,
 				FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */,
 				FB2AD4A51EFB0FBC009045A4 /* Info.plist */,
 			);
 			path = "EPIC today";
+			sourceTree = "<group>";
+		};
+		FB8FD02D1F0B00B800705A3B /* ErrorSubview */ = {
+			isa = PBXGroup;
+			children = (
+				FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */,
+				FBF236611F0A55B300D6F05A /* ErrorSubview.xib */,
+			);
+			name = ErrorSubview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

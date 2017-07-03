@@ -36,17 +36,7 @@ extension UIView {
         return view
     }
     @IBAction func rotate(_ sender: UIButton) {
-        print("dddd")
-        
         sender.rotate360Degrees()
-        
-        /*
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveLinear, animations: { () -> Void in
-            sender.transform = sender.transform.rotated(by: CGFloat(Float.pi))
-        }) { (finished) -> Void in
-            self.rotate(sender)
-        }
- */
     }
     
     func xibSetup() {

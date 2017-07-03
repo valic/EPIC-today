@@ -117,108 +117,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         singleTap.require(toFail: doubleTap)
         
         loadImage(color: currentColor, date: nil)
-
-        print("viewDidLoad")
     }
     
    
     
     
-    func showErrorSubview(error: Error) {
-        
-        closeErrorSubview()
-        
-        self.errorSubview = ErrorSubview(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
-        self.errorSubview?.errorStringLabel.text = error.localizedDescription
-        self.errorSubview?.reloadPressed.addTarget(self, action: #selector(myReloadPressed(_:)), for: UIControlEvents.touchUpInside)
-        
-        self.view.addSubview(self.errorSubview!)
-    }
-    
-    func closeErrorSubview() {
-        for view in self.view.subviews {
-            if view is ErrorSubview {
-                view.removeFromSuperview()
-            }
-        }
-    }
- 
-    
-    func myReloadPressed(_ sender:UIButton) {
-        loadImage(color: currentColor, date: nil)
-    }
+   
 
-    func singleTapped(recognizer: UITapGestureRecognizer) {
-        print("singleTapped")
-        
-        if infoView.isHidden {
-            setView(view: infoView, hidden: false)
-            infoViewIsHidden = false
-            
-            if scrollView.zoomScale <= 1 {
-                setView(view: infoView, hidden: false)
-            }
-            else{
-                setView(view: infoView, hidden: true)
-             //   scrollView.setZoomScale(1, animated: true)
-            }
-            
-        }
-        else{
-            setView(view: infoView, hidden: true)
-            infoViewIsHidden = true
-        }
-        
-    }
     
-    func doubleTapped(recognizer: UITapGestureRecognizer) {
-        print("doubleTapped")
-        
-        if scrollView.zoomScale == 1 {
-            scrollView.zoom(to: zoomRectForScale(scale: scrollView.maximumZoomScale, center: recognizer.location(in: recognizer.view)), animated: true)
-        } else {
-            scrollView.setZoomScale(1, animated: true)
-        }
-    }
-    
-    func configureLocationServices() {
-        // Send location updates to the current object.
-        self.locationManager.delegate = self
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
-        self.locationManager.requestLocation()
-
-    }
-    
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        switch status {
-        case .notDetermined:
-            manager.requestWhenInUseAuthorization()
-            break
-        case .authorizedAlways, .authorizedWhenInUse:
-            break
-        case .restricted:
-            print("restricted by e.g. parental controls. User can't enable Location Services")
-            break
-        case .denied:
-            print("user denied your app access to Location Services, but can grant access from Settings.app")
-            break
-        }
-    }
-    
-    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
-        return self.imageView
-    }
-    
-    func scrollViewDidZoom(_ scrollView: UIScrollView) {
-        if !infoViewIsHidden {
-            if scrollView.zoomScale <= 1 {
-                setView(view: infoView, hidden: false)
-            }
-            else{
-                setView(view: infoView, hidden: true)
-            }
-        }
-    }
     
     func zoomRectForScale(scale: CGFloat, center: CGPoint) -> CGRect {
         var zoomRect = CGRect.zero
@@ -229,9 +135,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         zoomRect.origin.y = newCenter.y - (zoomRect.size.height / 2.0)
         return zoomRect
     }
-
-   func getEpic(color: ColorImagery, date: Date?, completion: @escaping  ([EPIC]) -> ()) {
-
+    
+    func getEpic(color: ColorImagery, date: Date?, completion: @escaping  ([EPIC]) -> ()) {
+        
         
         var epicArray = [EPIC]()
         var urlString = ""
@@ -250,12 +156,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             
             urlString = urlString + "date/" + dateFormatter.string(from: date!)
             
-            print(urlString)
         }
         
         let url = URL(string: urlString)!
-        
-      //  self.imageActivityIndicator.startAnimating()
         
         Alamofire.request(url, method: .get, parameters: ["api_key": "zy0Q17y4wvS2SDDmNSxPgaKq7nFIbaCJmza4t7Qs"]).validate().responseJSON { response in
             switch response.result {
@@ -290,18 +193,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                     
                 }
                 
-                    let dscovr = ECI(x: jsonCurrent["dscovr_j2000_position"]["x"].doubleValue,
-                                                    y: jsonCurrent["dscovr_j2000_position"]["y"].doubleValue,
-                                                    z: jsonCurrent["dscovr_j2000_position"]["z"].doubleValue)!
-                    
-                    let sun = ECI(x: jsonCurrent["sun_j2000_position"]["x"].doubleValue,
-                                                 y: jsonCurrent["sun_j2000_position"]["y"].doubleValue,
-                                                 z: jsonCurrent["sun_j2000_position"]["z"].doubleValue)!
-                    
-                    
-                    let sev = acos((dscovr.x * sun.x + dscovr.y * sun.y + dscovr.z * sun.z)/(sqrt(pow(dscovr.x, 2) + pow(dscovr.y, 2) + pow(dscovr.z, 2))*(sqrt(pow(sun.x, 2) + pow(sun.y, 2) + pow(sun.z, 2)))))*180/Double.pi
+                let dscovr = ECI(x: jsonCurrent["dscovr_j2000_position"]["x"].doubleValue,
+                                 y: jsonCurrent["dscovr_j2000_position"]["y"].doubleValue,
+                                 z: jsonCurrent["dscovr_j2000_position"]["z"].doubleValue)!
                 
-
+                let sun = ECI(x: jsonCurrent["sun_j2000_position"]["x"].doubleValue,
+                              y: jsonCurrent["sun_j2000_position"]["y"].doubleValue,
+                              z: jsonCurrent["sun_j2000_position"]["z"].doubleValue)!
+                
+                
+                let sev = acos((dscovr.x * sun.x + dscovr.y * sun.y + dscovr.z * sun.z)/(sqrt(pow(dscovr.x, 2) + pow(dscovr.y, 2) + pow(dscovr.z, 2))*(sqrt(pow(sun.x, 2) + pow(sun.y, 2) + pow(sun.z, 2)))))*180/Double.pi
+                
+                
                 var imageUrlString = ""
                 
                 switch color {
@@ -309,21 +212,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                     imageUrlString = "https://epic.gsfc.nasa.gov/archive/natural/\(dateFormatter.string(from: jsonCurrent["date"].date!))/png/\(jsonCurrent["image"].stringValue).png"
                 case .enhanced:
                     imageUrlString = "https://epic.gsfc.nasa.gov/archive/enhanced/\(dateFormatter.string(from: jsonCurrent["date"].date!))/png/\(jsonCurrent["image"].stringValue).png"
-                  
+                    
                 }
-                print(imageUrlString)
+                epicArray.append(EPIC(imageName: jsonCurrent["image"].stringValue, urlString: imageUrlString, date: jsonCurrent["date"].date!, distanceToEarth: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: dscovr), distanceToSun: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: sun), sevAngle: sev))
                 
-                    epicArray.append(EPIC(imageName: jsonCurrent["image"].stringValue, urlString: imageUrlString, date: jsonCurrent["date"].date!, distanceToEarth: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: dscovr), distanceToSun: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: sun), sevAngle: sev))
-   
             case .failure(let error):
                 self.showErrorSubview(error: error)
             }
             completion(epicArray)
         }
-
+        
     }
     
-      func loadImage(color: ColorImagery, date: Date?) {
+    func loadImage(color: ColorImagery, date: Date?) {
+        
+        // Start load animating
+        self.imageActivityIndicator.startAnimating()
         
         getEpic(color: color, date: date) { (getEpic : [EPIC]) in
             
@@ -369,16 +273,86 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             }
         }
     }
-
+    
+    
+    //MARK: Location
+    func configureLocationServices() {
+        // Send location updates to the current object.
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyThreeKilometers
+        self.locationManager.requestLocation()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            manager.requestWhenInUseAuthorization()
+            break
+        case .authorizedAlways, .authorizedWhenInUse:
+            break
+        case .restricted:
+            print("restricted by e.g. parental controls. User can't enable Location Services")
+            break
+        case .denied:
+            print("user denied your app access to Location Services, but can grant access from Settings.app")
+            break
+        }
+    }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-     //   if let location = locations.first {
-          //  print("Current locatiom \(location)")
-
-     //   }
+        //   if let location = locations.first {
+        //  print("Current locatiom \(location)")
+        
+        //   }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Failed to find user's location: \(error.localizedDescription)")
+    }
+    
+    //MARK: TapGesture
+    func singleTapped(recognizer: UITapGestureRecognizer) {
+        if infoView.isHidden {
+            setView(view: infoView, hidden: false)
+            infoViewIsHidden = false
+            
+            if scrollView.zoomScale <= 1 {
+                setView(view: infoView, hidden: false)
+            }
+            else{
+                setView(view: infoView, hidden: true)
+            }
+        }
+        else{
+            setView(view: infoView, hidden: true)
+            infoViewIsHidden = true
+        }
+        
+    }
+    
+    func doubleTapped(recognizer: UITapGestureRecognizer) {
+        
+        if scrollView.zoomScale == 1 {
+            scrollView.zoom(to: zoomRectForScale(scale: scrollView.maximumZoomScale, center: recognizer.location(in: recognizer.view)), animated: true)
+        } else {
+            scrollView.setZoomScale(1, animated: true)
+        }
+    }
+    
+    //MARK: Zomming
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return self.imageView
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        if !infoViewIsHidden {
+            if scrollView.zoomScale <= 1 {
+                setView(view: infoView, hidden: false)
+            }
+            else{
+                setView(view: infoView, hidden: true)
+            }
+        }
     }
  
     
@@ -413,31 +387,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     
-    //MARK: Info
-    @IBAction func infoButton(_ sender: Any) {
-        
-        if infoView.isHidden {
-            setView(view: infoView, hidden: false)
-            infoViewIsHidden = false
-            
-            if scrollView.zoomScale <= 1 {
-                setView(view: infoView, hidden: false)
-            }
-            else{
-                setView(view: infoView, hidden: true)
-                
-                scrollView.setZoomScale(1, animated: true)
-            }
-            
-        }
-        else{
-            setView(view: infoView, hidden: true)
-            infoViewIsHidden = true
-        }
-        
-    }
-    
-    
     func setView(view: UIView, hidden: Bool) {
         UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: { _ in
             view.isHidden = hidden
@@ -445,8 +394,30 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     func distanceInSpace(from: ECI, before: ECI) -> Double {
-       
         return sqrt(pow(from.x - before.x, 2) + pow(from.y - before.y, 2) + pow(from.z - before.z, 2))
+    }
+    
+    //MARK: ErrorSubview
+    func showErrorSubview(error: Error) {
+        closeErrorSubview()
+        
+        self.errorSubview = ErrorSubview(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        self.errorSubview?.errorStringLabel.text = error.localizedDescription
+        self.errorSubview?.reloadPressed.addTarget(self, action: #selector(reload(_:)), for: UIControlEvents.touchUpInside)
+        
+        self.view.addSubview(self.errorSubview!)
+    }
+    
+    func closeErrorSubview() {
+        for view in self.view.subviews {
+            if view is ErrorSubview {
+                view.removeFromSuperview()
+            }
+        }
+    }
+    
+    func reload(_ sender:UIButton) {
+        loadImage(color: currentColor, date: nil)
     }
 
 }
