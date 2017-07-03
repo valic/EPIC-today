@@ -71,6 +71,8 @@ extension JSON {
     }()
 }
 
+
+
 class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewDelegate {
 
     @IBOutlet var scrollView: UIScrollView!
@@ -85,13 +87,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     let locationManager = CLLocationManager()
     
     var infoViewIsHidden:Bool = true
-    
-  //  var locationCurent = CLLocation()
-    
     var collectionView: UICollectionView!
-    
     var currentDate = Date()
     var currentColor = ColorImagery.natural
+    var mySubview:ErrorSubview!
+    static let sharedData = ViewController()
+    static var errorAlamofire: Error?
+    
+    var errorSubview:ErrorSubview!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,44 +106,55 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.0
         
-
-        
         // Single Tap
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
         singleTap.numberOfTapsRequired = 1
-        
         self.view.addGestureRecognizer(singleTap)
         
         // Double Tap
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.numberOfTapsRequired = 2
-        
         self.view.addGestureRecognizer(doubleTap)
         
         singleTap.require(toFail: doubleTap)
-        
-        loadImage(color: .natural, date: nil)
-        
-        let view = ViewController.instanceFromNib()
-        
-        view.frame = self.view.bounds
-        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        print("viewDidLoad")
         
         
-        self.view.addSubview(view)
         
-        let controller = storyboard?.instantiateViewControllerWithIdentifier("ErrorSubview") as ErrorSubview!
-        
-        didMoveToParentViewController(controller)
-
- 
-
-        
-
     }
     
+    @IBAction func test(_ sender: Any) {
+        self.errorSubview = ErrorSubview(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        self.errorSubview.reloadPressed.addTarget(self, action: #selector(myReloadPressed(_:)), for: UIControlEvents.touchUpInside)
+        
+        self.view.addSubview(errorSubview)
+    }
+    
+    func myReloadPressed(_ sender:UIButton) {
+        print("press button")
+        self.errorSubview.removeFromSuperview()
+    }
+    
+    
+
+    /*
+    override func viewWillAppear(_ animated: Bool) {
+        print("viewDidLayoutSubviews")
+        
+        loadImage(color: .natural, date: nil)
+    }
 
     
+    override func viewDidLayoutSubviews() {
+        print("viewDidLayoutSubviews")
+        
+        loadImage(color: .natural, date: nil)
+    }
+    
+    override func viewWillLayoutSubviews() {
+        print("viewWillLayoutSubviews")
+    }
+*/
     func singleTapped(recognizer: UITapGestureRecognizer) {
         print("singleTapped")
         
@@ -223,7 +237,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         return zoomRect
     }
 
-    func getEpic(color: ColorImagery, date: Date?, completion: @escaping  ([EPIC]) -> ()) {
+   func getEpic(color: ColorImagery, date: Date?, completion: @escaping  ([EPIC]) -> ()) {
 
         
         var epicArray = [EPIC]()
@@ -248,7 +262,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         
         let url = URL(string: urlString)!
         
-        self.imageActivityIndicator.startAnimating()
+      //  self.imageActivityIndicator.startAnimating()
         
         Alamofire.request(url, method: .get, parameters: ["api_key": "zy0Q17y4wvS2SDDmNSxPgaKq7nFIbaCJmza4t7Qs"]).validate().responseJSON { response in
             switch response.result {
@@ -302,65 +316,84 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                     imageUrlString = "https://epic.gsfc.nasa.gov/archive/natural/\(dateFormatter.string(from: jsonCurrent["date"].date!))/png/\(jsonCurrent["image"].stringValue).png"
                 case .enhanced:
                     imageUrlString = "https://epic.gsfc.nasa.gov/archive/enhanced/\(dateFormatter.string(from: jsonCurrent["date"].date!))/png/\(jsonCurrent["image"].stringValue).png"
+                  
                 }
                 print(imageUrlString)
                 
                     epicArray.append(EPIC(imageName: jsonCurrent["image"].stringValue, urlString: imageUrlString, date: jsonCurrent["date"].date!, distanceToEarth: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: dscovr), distanceToSun: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: sun), sevAngle: sev))
+                
+
+                for subview in self.view.subviews {
+                    self.view.willRemoveSubview(subview)
+                }
    
-            case .failure(let error):
-                print(error.localizedDescription)
+            case .failure( _):
                 
-                self.imageActivityIndicator.stopAnimating()
-                self.imageView.contentMode = .center
-                self.imageView.image = #imageLiteral(resourceName: "Cloud error")
-                
+                break
+             //   self.showErrorSubview(error: error)
+
             }
             completion(epicArray)
         }
 
     }
     
-    func loadImage(color: ColorImagery, date: Date?) {
+      func loadImage(color: ColorImagery, date: Date?) {
+      
+    //    self.view.willRemoveSubview(ViewController.instanceFromNib())
+        
+        
         getEpic(color: color, date: date) { (getEpic : [EPIC]) in
             
             if !getEpic.isEmpty {
-            
-            let URL = NSURL(string: getEpic[0].urlString)!
-            
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateStyle = .medium
-            dateFormatter.timeStyle = .none
-            self.title = dateFormatter.string(from: getEpic[0].date)
-            
-            self.currentDate = getEpic[0].date
-            
-            
-            let distanceToEarth = Measurement(value: getEpic[0].distanceToEarth, unit: UnitLength.meters)
-            self.distanceToEarthLabbel.text = MeasurementFormatter().string(from: distanceToEarth)
-            
-            let distanceToSun = Measurement(value: getEpic[0].distanceToSun, unit: UnitLength.meters)
-            self.distanceToSunLabbel.text = MeasurementFormatter().string(from: distanceToSun)
+                
+                let URL = NSURL(string: getEpic[0].urlString)!
+                
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = .medium
+                dateFormatter.timeStyle = .none
+                self.title = dateFormatter.string(from: getEpic[0].date)
+                
+                self.currentDate = getEpic[0].date
 
-            self.sevAngleLabel.text = String(format:"%.2f", getEpic[0].sevAngle) + "°"
-            
-            self.imageView.contentMode = .scaleAspectFit
-            self.imageView.af_setImage(withURL: URL as URL, progress: {NSProgress in
-                print("sdsdsd")
-                if NSProgress.fractionCompleted == 1 {
-                    self.imageActivityIndicator.stopAnimating()
-                }
-                else{
-                    self.imageActivityIndicator.startAnimating()
-                }
-            }, completion: { response in
-             //   print(response.result.value)
-               // print(response.result.error)
+                print(self)
                 
-                print (response.result.isSuccess)
                 
-                self.imageActivityIndicator.stopAnimating()
-            })
-            
+                // Download image
+                self.imageView.af_setImage(withURL: URL as URL, progress: {NSProgress in
+                    
+                    if NSProgress.fractionCompleted == 1 {
+                        self.imageActivityIndicator.stopAnimating()
+                    }
+                    else{
+                        self.imageActivityIndicator.startAnimating()
+                    }
+                }, completion: { response in
+                    
+                    if let error = response.result.error {
+                        self.showErrorSubview(error: error)
+                    }
+                    
+                    if response.result.isSuccess {
+                        
+                        /*
+                        let distanceToEarth = Measurement(value: getEpic[0].distanceToEarth, unit: UnitLength.meters)
+                        self.distanceToEarthLabbel.text = MeasurementFormatter().string(from: distanceToEarth)
+                        
+                        let distanceToSun = Measurement(value: getEpic[0].distanceToSun, unit: UnitLength.meters)
+                        self.distanceToSunLabbel.text = MeasurementFormatter().string(from: distanceToSun)
+                        
+                        self.sevAngleLabel.text = String(format:"%.2f", getEpic[0].sevAngle) + "°"
+                        
+                        self.imageView.contentMode = .scaleAspectFit
+                        */
+                        
+                      //  let view = ViewController.instanceFromNib()
+                       // self.view.willRemoveSubview(view)
+                        self.imageActivityIndicator.stopAnimating()
+                    }
+                })
+                
             }
             
         }
@@ -452,6 +485,18 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             view.isHidden = hidden
         }, completion: nil)
     }
+    
+    func showErrorSubview(error: Error) {
+        
+        ViewController.errorAlamofire = error
+        
+        let view = ViewController.instanceFromNib()
+        view.frame = self.view.bounds
+        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
+        self.view.addSubview(view)
+    }
+    
+
     
     func distanceInSpace(from: ECI, before: ECI) -> Double {
        
