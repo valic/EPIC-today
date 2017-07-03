@@ -14,12 +14,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ImageSlideshow-ImageSlideshow.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ImageSlideshow.xcscheme</key>
+		<key>Onboard.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -37,12 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23B2342792BD81EB627696E1DF6C3B37</key>
+		<key>0A3EA2E36DD97BFF9423801D7DEF802E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6B730A74A165B93D8F548C7587C9A060</key>
+		<key>271001CDD007A1900ABA248DBAB55C2D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,17 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>8F5682E0AC126B1910FC04BA8A16F382</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>9EFE4C70245EE2857D336B8B9FA4E825</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>A2BC13386D92368FB6152BBB38318A3E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C2F3D02B448872659134FB61138D84BA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

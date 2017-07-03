@@ -10,6 +10,7 @@ import UIKit
 import AlamofireImage
 import Alamofire
 import SwiftyJSON
+import Onboard
 import CoreLocation
 
 
@@ -29,13 +30,11 @@ class EPIC {
         self.distanceToEarth = distanceToEarth
         self.distanceToSun = distanceToSun
         self.sevAngle = sevAngle
-
     }
     
 }
 
 class ECI {
-    
     var x:Double
     var y:Double
     var z:Double
@@ -45,7 +44,6 @@ class ECI {
         self.y = y
         self.z = z
     }
-    
 }
 
 enum ColorImagery {
@@ -87,12 +85,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     let locationManager = CLLocationManager()
     
     var infoViewIsHidden:Bool = true
-    var collectionView: UICollectionView!
     var currentDate = Date()
     var currentColor = ColorImagery.natural
-    var mySubview:ErrorSubview!
     var errorSubview:ErrorSubview?
-    var degree = CGFloat(Float.pi/180)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -119,25 +115,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         loadImage(color: currentColor, date: nil)
     }
     
-   
-    
-    
-   
-
-    
-    
-    func zoomRectForScale(scale: CGFloat, center: CGPoint) -> CGRect {
-        var zoomRect = CGRect.zero
-        zoomRect.size.height = imageView.frame.size.height / scale
-        zoomRect.size.width  = imageView.frame.size.width  / scale
-        let newCenter = imageView.convert(center, from: scrollView)
-        zoomRect.origin.x = newCenter.x - (zoomRect.size.width / 2.0)
-        zoomRect.origin.y = newCenter.y - (zoomRect.size.height / 2.0)
-        return zoomRect
-    }
-    
     func getEpic(color: ColorImagery, date: Date?, completion: @escaping  ([EPIC]) -> ()) {
-        
         
         var epicArray = [EPIC]()
         var urlString = ""
@@ -150,12 +128,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         }
         
         if date != nil {
-            
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
-            
             urlString = urlString + "date/" + dateFormatter.string(from: date!)
-            
         }
         
         let url = URL(string: urlString)!
@@ -204,7 +179,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                 
                 let sev = acos((dscovr.x * sun.x + dscovr.y * sun.y + dscovr.z * sun.z)/(sqrt(pow(dscovr.x, 2) + pow(dscovr.y, 2) + pow(dscovr.z, 2))*(sqrt(pow(sun.x, 2) + pow(sun.y, 2) + pow(sun.z, 2)))))*180/Double.pi
                 
-                
                 var imageUrlString = ""
                 
                 switch color {
@@ -221,7 +195,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             }
             completion(epicArray)
         }
-        
     }
     
     func loadImage(color: ColorImagery, date: Date?) {
@@ -354,8 +327,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             }
         }
     }
- 
     
+    func zoomRectForScale(scale: CGFloat, center: CGPoint) -> CGRect {
+        var zoomRect = CGRect.zero
+        zoomRect.size.height = imageView.frame.size.height / scale
+        zoomRect.size.width  = imageView.frame.size.width  / scale
+        let newCenter = imageView.convert(center, from: scrollView)
+        zoomRect.origin.x = newCenter.x - (zoomRect.size.width / 2.0)
+        zoomRect.origin.y = newCenter.y - (zoomRect.size.height / 2.0)
+        return zoomRect
+    }
+ 
     //MARK: Share
     @IBAction func shareButton(_ sender: Any) {
         
@@ -374,14 +356,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     
     //MART: ColorImagery
     @IBAction func colorImagery(_ sender: Any) {
-        
         switch currentColor {
         case .natural:
             currentColor = .enhanced
         case .enhanced:
             currentColor = .natural
         }
-        
         loadImage(color: currentColor, date: nil)
     }
     
