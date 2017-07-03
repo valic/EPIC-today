@@ -373,7 +373,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     //MART: ColorImagery
-    
     @IBAction func colorImagery(_ sender: Any) {
         
         switch currentColor {
@@ -386,6 +385,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         loadImage(color: currentColor, date: nil)
     }
     
+    //MART: What is EPIC?
+    @IBAction func whatIsEPIC(_ sender: Any) {
+        UIApplication.shared.open(URL(string: "https://epic.gsfc.nasa.gov/epic")!, options: [:], completionHandler: nil)
+    }
     
     func setView(view: UIView, hidden: Bool) {
         UIView.transition(with: view, duration: 0.5, options: .transitionCrossDissolve, animations: { _ in

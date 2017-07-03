@@ -52,52 +52,62 @@
                                 <rect key="frame" x="16" y="520" width="343" height="75"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to Earth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhd-yH-mpW">
-                                        <rect key="frame" x="4" y="4" width="137" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to Sun:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Ur-uKc">
-                                        <rect key="frame" x="4" y="29" width="126" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,546,445 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O38-dH-qxV">
-                                        <rect key="frame" x="134" y="29" width="105" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEV Angle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-Gt-I0R">
-                                        <rect key="frame" x="4" y="54" width="85" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.95°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-w4-IaO">
-                                        <rect key="frame" x="93" y="54" width="42" height="21"/>
+                                        <rect key="frame" x="4" y="-33" width="137" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,546,445 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-D3-JGa">
-                                        <rect key="frame" x="145" y="4" width="105" height="21"/>
+                                        <rect key="frame" x="145" y="-33" width="105" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to Sun:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Ur-uKc">
+                                        <rect key="frame" x="4" y="-8" width="126" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,546,445 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O38-dH-qxV">
+                                        <rect key="frame" x="134" y="-8" width="105" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEV Angle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-Gt-I0R">
+                                        <rect key="frame" x="4" y="17" width="85" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.95°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-w4-IaO">
+                                        <rect key="frame" x="93" y="17" width="42" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-yh-ox6">
+                                        <rect key="frame" x="4" y="42" width="107" height="33"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <state key="normal" title="What is EPIC?"/>
+                                        <connections>
+                                            <action selector="whatIsEPIC:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XSw-Qa-VJs"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="lY1-D3-JGa" firstAttribute="centerY" secondItem="Jhd-yH-mpW" secondAttribute="centerY" id="0F4-GN-zDu"/>
+                                    <constraint firstItem="BQ4-yh-ox6" firstAttribute="leading" secondItem="38Y-BB-ZiE" secondAttribute="leading" constant="4" id="2Cc-x9-0vU"/>
+                                    <constraint firstAttribute="bottom" secondItem="BQ4-yh-ox6" secondAttribute="bottom" id="3h2-B6-wJM"/>
                                     <constraint firstItem="lY1-D3-JGa" firstAttribute="leading" secondItem="Jhd-yH-mpW" secondAttribute="trailing" constant="4" id="Ag6-e3-9rU"/>
                                     <constraint firstItem="O38-dH-qxV" firstAttribute="leading" secondItem="7q4-Ur-uKc" secondAttribute="trailing" constant="4" id="ImP-AH-hmH"/>
                                     <constraint firstItem="p0Y-w4-IaO" firstAttribute="top" secondItem="7q4-Ur-uKc" secondAttribute="bottom" constant="4" id="MWV-Tu-mBg"/>
                                     <constraint firstAttribute="height" constant="75" id="Off-wp-KE3"/>
-                                    <constraint firstAttribute="bottom" secondItem="PAO-Gt-I0R" secondAttribute="bottom" id="Rwc-90-8Ki"/>
                                     <constraint firstItem="p0Y-w4-IaO" firstAttribute="leading" secondItem="PAO-Gt-I0R" secondAttribute="trailing" constant="4" id="SiK-dd-Wi5"/>
                                     <constraint firstItem="7q4-Ur-uKc" firstAttribute="leading" secondItem="38Y-BB-ZiE" secondAttribute="leading" constant="4" id="VmK-lo-MO9"/>
                                     <constraint firstItem="O38-dH-qxV" firstAttribute="centerY" secondItem="7q4-Ur-uKc" secondAttribute="centerY" id="XBo-gJ-03L"/>
+                                    <constraint firstItem="BQ4-yh-ox6" firstAttribute="top" secondItem="p0Y-w4-IaO" secondAttribute="bottom" constant="4" id="efr-uW-pH2"/>
                                     <constraint firstItem="O38-dH-qxV" firstAttribute="top" secondItem="Jhd-yH-mpW" secondAttribute="bottom" constant="4" id="fqb-N4-w6F"/>
                                     <constraint firstItem="PAO-Gt-I0R" firstAttribute="leading" secondItem="38Y-BB-ZiE" secondAttribute="leading" constant="4" id="jGA-nx-ZqX"/>
                                     <constraint firstItem="Jhd-yH-mpW" firstAttribute="leading" secondItem="38Y-BB-ZiE" secondAttribute="leading" constant="4" id="niH-2q-Sht"/>
