@@ -20,26 +20,48 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5E-n7-JtZ">
-                    <rect key="frame" x="166.5" y="323" width="42" height="21"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error string" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5E-n7-JtZ">
+                    <rect key="frame" x="16" y="341" width="343" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-vP-KFr">
-                    <rect key="frame" x="164.5" y="352" width="46" height="30"/>
-                    <state key="normal" title="Button"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Cloud error" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-mq-MIv">
+                    <rect key="frame" x="137" y="233.5" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="NeY-5M-HdU"/>
+                        <constraint firstAttribute="width" constant="100" id="z3e-vO-d0b"/>
+                    </constraints>
+                </imageView>
+                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anZ-vP-KFr">
+                    <rect key="frame" x="163" y="370" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="50" id="2YL-ET-ktd"/>
+                        <constraint firstAttribute="height" constant="50" id="Gh9-L4-tPn"/>
+                    </constraints>
+                    <state key="normal" image="Refresh"/>
+                    <connections>
+                        <action selector="rotate:" destination="-1" eventType="touchUpInside" id="03a-Y0-yJp"/>
+                    </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="A5E-n7-JtZ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="XnA-cA-zjK"/>
-                <constraint firstItem="anZ-vP-KFr" firstAttribute="top" secondItem="A5E-n7-JtZ" secondAttribute="bottom" constant="8" id="cWz-oW-w9j"/>
-                <constraint firstItem="anZ-vP-KFr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="jgG-0b-fxh"/>
-                <constraint firstItem="A5E-n7-JtZ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rpQ-jT-EvD"/>
+                <constraint firstItem="A5E-n7-JtZ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FIE-Kh-geU"/>
+                <constraint firstItem="xDz-mq-MIv" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="LDH-os-81R"/>
+                <constraint firstItem="A5E-n7-JtZ" firstAttribute="top" secondItem="xDz-mq-MIv" secondAttribute="bottom" constant="8" id="Sjd-id-h4v"/>
+                <constraint firstAttribute="trailing" secondItem="A5E-n7-JtZ" secondAttribute="trailing" constant="16" id="b5e-cc-Ol0"/>
+                <constraint firstItem="anZ-vP-KFr" firstAttribute="top" secondItem="A5E-n7-JtZ" secondAttribute="bottom" constant="8" id="cPh-Sp-PQW"/>
+                <constraint firstItem="xDz-mq-MIv" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="-50" id="g2U-gL-bgn"/>
+                <constraint firstItem="anZ-vP-KFr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="hG6-Bw-z8Z"/>
             </constraints>
             <nil key="simulatedTopBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="26.5" y="52.5"/>
         </view>
     </objects>
+    <resources>
+        <image name="Cloud error" width="100" height="100"/>
+        <image name="Refresh" width="25" height="25"/>
+    </resources>
 </document>

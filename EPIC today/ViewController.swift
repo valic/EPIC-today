@@ -91,10 +91,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     var currentDate = Date()
     var currentColor = ColorImagery.natural
     var mySubview:ErrorSubview!
-    static let sharedData = ViewController()
-    static var errorAlamofire: Error?
-    
-    var errorSubview:ErrorSubview!
+    var errorSubview:ErrorSubview?
+    var degree = CGFloat(Float.pi/180)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,52 +107,47 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         // Single Tap
         let singleTap = UITapGestureRecognizer(target: self, action: #selector(singleTapped))
         singleTap.numberOfTapsRequired = 1
-        self.view.addGestureRecognizer(singleTap)
+        self.scrollView.addGestureRecognizer(singleTap)
         
         // Double Tap
         let doubleTap = UITapGestureRecognizer(target: self, action: #selector(doubleTapped))
         doubleTap.numberOfTapsRequired = 2
-        self.view.addGestureRecognizer(doubleTap)
+        self.scrollView.addGestureRecognizer(doubleTap)
         
         singleTap.require(toFail: doubleTap)
+        
+        loadImage(color: currentColor, date: nil)
+
         print("viewDidLoad")
-        
-        
-        
     }
     
-    @IBAction func test(_ sender: Any) {
-        self.errorSubview = ErrorSubview(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
-        self.errorSubview.reloadPressed.addTarget(self, action: #selector(myReloadPressed(_:)), for: UIControlEvents.touchUpInside)
+   
+    
+    
+    func showErrorSubview(error: Error) {
         
-        self.view.addSubview(errorSubview)
+        closeErrorSubview()
+        
+        self.errorSubview = ErrorSubview(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+        self.errorSubview?.errorStringLabel.text = error.localizedDescription
+        self.errorSubview?.reloadPressed.addTarget(self, action: #selector(myReloadPressed(_:)), for: UIControlEvents.touchUpInside)
+        
+        self.view.addSubview(self.errorSubview!)
     }
+    
+    func closeErrorSubview() {
+        for view in self.view.subviews {
+            if view is ErrorSubview {
+                view.removeFromSuperview()
+            }
+        }
+    }
+ 
     
     func myReloadPressed(_ sender:UIButton) {
-        print("press button")
-        self.errorSubview.removeFromSuperview()
-    }
-    
-    
-
-    /*
-    override func viewWillAppear(_ animated: Bool) {
-        print("viewDidLayoutSubviews")
-        
-        loadImage(color: .natural, date: nil)
+        loadImage(color: currentColor, date: nil)
     }
 
-    
-    override func viewDidLayoutSubviews() {
-        print("viewDidLayoutSubviews")
-        
-        loadImage(color: .natural, date: nil)
-    }
-    
-    override func viewWillLayoutSubviews() {
-        print("viewWillLayoutSubviews")
-    }
-*/
     func singleTapped(recognizer: UITapGestureRecognizer) {
         print("singleTapped")
         
@@ -321,17 +314,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                 print(imageUrlString)
                 
                     epicArray.append(EPIC(imageName: jsonCurrent["image"].stringValue, urlString: imageUrlString, date: jsonCurrent["date"].date!, distanceToEarth: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: dscovr), distanceToSun: self.distanceInSpace(from: ECI(x: 0, y: 0, z: 0)!, before: sun), sevAngle: sev))
-                
-
-                for subview in self.view.subviews {
-                    self.view.willRemoveSubview(subview)
-                }
    
-            case .failure( _):
-                
-                break
-             //   self.showErrorSubview(error: error)
-
+            case .failure(let error):
+                self.showErrorSubview(error: error)
             }
             completion(epicArray)
         }
@@ -339,9 +324,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
       func loadImage(color: ColorImagery, date: Date?) {
-      
-    //    self.view.willRemoveSubview(ViewController.instanceFromNib())
-        
         
         getEpic(color: color, date: date) { (getEpic : [EPIC]) in
             
@@ -353,11 +335,17 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                 dateFormatter.dateStyle = .medium
                 dateFormatter.timeStyle = .none
                 self.title = dateFormatter.string(from: getEpic[0].date)
-                
                 self.currentDate = getEpic[0].date
-
-                print(self)
                 
+                let distanceToEarth = Measurement(value: getEpic[0].distanceToEarth, unit: UnitLength.meters)
+                self.distanceToEarthLabbel.text = MeasurementFormatter().string(from: distanceToEarth)
+                
+                let distanceToSun = Measurement(value: getEpic[0].distanceToSun, unit: UnitLength.meters)
+                self.distanceToSunLabbel.text = MeasurementFormatter().string(from: distanceToSun)
+                
+                self.sevAngleLabel.text = String(format:"%.2f", getEpic[0].sevAngle) + "°"
+                
+                self.imageView.contentMode = .scaleAspectFit
                 
                 // Download image
                 self.imageView.af_setImage(withURL: URL as URL, progress: {NSProgress in
@@ -373,45 +361,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                     if let error = response.result.error {
                         self.showErrorSubview(error: error)
                     }
-                    
                     if response.result.isSuccess {
-                        
-                        /*
-                        let distanceToEarth = Measurement(value: getEpic[0].distanceToEarth, unit: UnitLength.meters)
-                        self.distanceToEarthLabbel.text = MeasurementFormatter().string(from: distanceToEarth)
-                        
-                        let distanceToSun = Measurement(value: getEpic[0].distanceToSun, unit: UnitLength.meters)
-                        self.distanceToSunLabbel.text = MeasurementFormatter().string(from: distanceToSun)
-                        
-                        self.sevAngleLabel.text = String(format:"%.2f", getEpic[0].sevAngle) + "°"
-                        
-                        self.imageView.contentMode = .scaleAspectFit
-                        */
-                        
-                      //  let view = ViewController.instanceFromNib()
-                       // self.view.willRemoveSubview(view)
                         self.imageActivityIndicator.stopAnimating()
+                        self.closeErrorSubview()
                     }
                 })
-                
             }
-            
         }
     }
-    
-    
-    /*
-     { NSProgress in
-     print("sdsdsd")
-     if NSProgress.fractionCompleted == 1 {
-     self.imageActivityIndicator.stopAnimating()
-     }
-     else{
-     self.imageActivityIndicator.startAnimating()
-     }
-     }
- */
-    
+
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
      //   if let location = locations.first {
           //  print("Current locatiom \(location)")
@@ -486,25 +444,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         }, completion: nil)
     }
     
-    func showErrorSubview(error: Error) {
-        
-        ViewController.errorAlamofire = error
-        
-        let view = ViewController.instanceFromNib()
-        view.frame = self.view.bounds
-        view.autoresizingMask = [UIViewAutoresizing.flexibleWidth, UIViewAutoresizing.flexibleHeight]
-        self.view.addSubview(view)
-    }
-    
-
-    
     func distanceInSpace(from: ECI, before: ECI) -> Double {
        
         return sqrt(pow(from.x - before.x, 2) + pow(from.y - before.y, 2) + pow(from.z - before.z, 2))
-    }
-    
-    class func instanceFromNib() -> UIView {
-        return UINib(nibName: "ErrorView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! UIView
     }
 
 }
