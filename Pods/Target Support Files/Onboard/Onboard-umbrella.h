@@ -10,7 +10,9 @@
 #endif
 #endif
 
+#import "OnboardingViewController.h"
+#import "OnboardingContentViewController.h"
 
-FOUNDATION_EXPORT double ImageSlideshowVersionNumber;
-FOUNDATION_EXPORT const unsigned char ImageSlideshowVersionString[];
+FOUNDATION_EXPORT double OnboardVersionNumber;
+FOUNDATION_EXPORT const unsigned char OnboardVersionString[];
 
