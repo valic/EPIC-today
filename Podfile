@@ -3,7 +3,6 @@
 use_frameworks!
 
 target 'EPIC today' do
-    pod 'Onboard'
     pod 'AlamofireImage', '~> 3.1'
     pod 'SwiftyJSON', '~> 3.1'
     pod 'Gecco'
