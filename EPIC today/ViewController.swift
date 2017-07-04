@@ -76,6 +76,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var imageActivityIndicator: UIActivityIndicatorView!
     @IBOutlet var infoView: UIView!
+    @IBOutlet var bottomView: UIView!
     @IBOutlet var distanceToEarthLabbel: UILabel!
     @IBOutlet var distanceToSunLabbel: UILabel!
     @IBOutlet var sevAngleLabel: UILabel!
@@ -87,7 +88,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     var currentDate = Date()
     var currentColor = ColorImagery.natural
     var errorSubview:ErrorSubview?
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,25 +114,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         loadImage(color: currentColor, date: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-/*loseErrorSubview()
- 
- self.errorSubview = ErrorSubview(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
- self.errorSubview?.errorStringLabel.text = error.localizedDescription
- self.errorSubview?.reloadPressed.addTarget(self, action: #selector(reload(_:)), for: UIControlEvents.touchUpInside)
- 
- self.view.addSubview(self.errorSubview!)*/
-        
-        let onboardingVC = generatePurchasePaging().view
-        onboardingVC?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
- 
-       // self.view.addSubview(onboardingVC!)
 
-        
-        }
     
-    @IBAction func buttonPressed(_ sender: AnyObject) {
+    @IBAction func infoButton(_ sender: AnyObject) {
         presentAnnotation()
     }
     
@@ -337,6 +321,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         
         if scrollView.zoomScale == 1 {
             scrollView.zoom(to: zoomRectForScale(scale: scrollView.maximumZoomScale, center: recognizer.location(in: recognizer.view)), animated: true)
+            
         } else {
             scrollView.setZoomScale(1, animated: true)
         }
@@ -348,6 +333,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        if scrollView.zoomScale <= 1 {
+            setView(view: bottomView, hidden: false)
+        }
+        else{
+            setView(view: bottomView, hidden: true)
+        }
+        
         if !infoViewIsHidden {
             if scrollView.zoomScale <= 1 {
                 setView(view: infoView, hidden: false)
@@ -433,70 +425,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         loadImage(color: currentColor, date: nil)
     }
     
-    func generatePurchasePaging() -> OnboardingViewController {
-        
-        
-        // Initialize onboarding view controller
-        var onboardingVC = OnboardingViewController()
-        
-        // Create slides
-        let firstPage = OnboardingContentViewController.content(withTitle: "Welcome To The App!", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image1"), buttonText: nil, action: nil)
-        
-        let secondPage = OnboardingContentViewController.content(withTitle: "Step 1", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image2"), buttonText: nil, action: nil)
-        
-        let thirdPage = OnboardingContentViewController.content(withTitle: "Step 2:", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image3"), buttonText: nil, action: nil)
-        
-        let fourthPage = OnboardingContentViewController.content(withTitle: "Step 3", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image4"), buttonText: nil, action: self.removeFromParentViewController)
-        
-        // Define onboarding view controller properties
-        onboardingVC = OnboardingViewController.onboard(withBackgroundImage: UIImage(named: "giga-banner"), contents: [firstPage, secondPage, thirdPage, fourthPage])
-        onboardingVC.shouldFadeTransitions = true
-        onboardingVC.shouldMaskBackground = false
-        onboardingVC.shouldBlurBackground = false
-        onboardingVC.fadePageControlOnLastPage = true
-        onboardingVC.pageControl.pageIndicatorTintColor = UIColor.darkGray
-        onboardingVC.pageControl.currentPageIndicatorTintColor = UIColor.white
-        onboardingVC.skipButton.setTitleColor(UIColor.black, for: .normal)
-        onboardingVC.allowSkipping = true
-        onboardingVC.fadeSkipButtonOnLastPage = true
-        
-  
-        
-        return onboardingVC
-        
-        
-        /*
-        
-        let firstPage = OnboardingContentViewController(title: "Page Title", body: "Page body goes here.", image: nil, buttonText: "Text For Button") { () -> Void in
-            // do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
-  
-        }
-        let firstPage2 = OnboardingContentViewController(title: "Page Title 2", body: "Page body goes here.", image: nil, buttonText: "Text For Button") { () -> Void in
-            // do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
-            
-        }
-        
-        firstPage.actionButton.addTarget(self, action: #selector(handleButtonPressed(_:)), for: .touchUpInside)
-        firstPage2.actionButton.addTarget(self, action: #selector(handleButtonPressed(_:)), for: .touchUpInside)
 
-        let onboardingVC = OnboardingViewController(backgroundImage: nil, contents: [firstPage, firstPage2])
-        
-        // Customize Onboard viewController
-   //     onboardingVC?.skipButton.setTitleColor(UIColor.black, for: .normal)
-    //    onboardingVC?.allowSkipping = false
-     //   onboardingVC?.fadeSkipButtonOnLastPage = true
-        
-
-        
-        
-        return onboardingVC!*/
-    }
-    
-    func handleButtonPressed(_ sender:UIButton) {
-        // Show the view that needs showing
-        
-        print("Show the view that needs showing")
-    }
     
 }
 
