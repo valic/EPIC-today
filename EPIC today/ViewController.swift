@@ -116,22 +116,9 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         self.scrollView.addGestureRecognizer(doubleTap)
         
         singleTap.require(toFail: doubleTap)
-        
-        print("viewDidLoad")
+
         loadImage(color: currentColor, date: nil)
         
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-       
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("viewDidDisappear")
     }
     
     @IBAction func infoButton(_ sender: AnyObject) {
@@ -139,6 +126,12 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     func presentAnnotation() {
+        
+        if !infoView.isHidden {
+        setView(view: infoView, hidden: true)
+        infoViewIsHidden = true
+        }
+        
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Annotation") as! AnnotationViewController
         viewController.alpha = 0.5
         present(viewController, animated: true, completion: nil)
