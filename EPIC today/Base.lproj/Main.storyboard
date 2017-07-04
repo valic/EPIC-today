@@ -30,9 +30,6 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                     </imageView>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-zc-e70">
-                                        <rect key="frame" x="177" y="291" width="20" height="20"/>
-                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
@@ -48,6 +45,9 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="yUf-3I-IwF"/>
                                 </connections>
                             </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-zc-e70">
+                                <rect key="frame" x="177" y="291" width="20" height="20"/>
+                            </activityIndicatorView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38Y-BB-ZiE">
                                 <rect key="frame" x="8" y="483" width="359" height="79"/>
                                 <subviews>
@@ -138,13 +138,13 @@
                         <constraints>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="77M-7B-LWN" secondAttribute="bottom" constant="8" id="7Ax-83-GPh"/>
                             <constraint firstItem="77M-7B-LWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="EAv-CJ-wIR"/>
-                            <constraint firstItem="8HQ-zc-e70" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="M9F-BW-2cR"/>
+                            <constraint firstItem="8HQ-zc-e70" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M33-o4-g7f"/>
                             <constraint firstAttribute="trailingMargin" secondItem="77M-7B-LWN" secondAttribute="trailing" id="PAw-Co-NUy"/>
                             <constraint firstItem="77M-7B-LWN" firstAttribute="top" secondItem="38Y-BB-ZiE" secondAttribute="bottom" id="QNs-pU-p2s"/>
+                            <constraint firstItem="8HQ-zc-e70" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QQI-xZ-2mn"/>
                             <constraint firstAttribute="trailing" secondItem="Yte-PG-YLs" secondAttribute="trailing" id="VNX-y8-JKG"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zyt-Yr-vAT"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="c9D-4a-Hw5"/>
-                            <constraint firstItem="8HQ-zc-e70" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dy9-fw-bDC"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tD9-Df-Ph6"/>
                             <constraint firstAttribute="trailingMargin" secondItem="38Y-BB-ZiE" secondAttribute="trailing" constant="-8" id="u9y-67-Urz"/>
                             <constraint firstItem="38Y-BB-ZiE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-8" id="wig-yA-yTi"/>
