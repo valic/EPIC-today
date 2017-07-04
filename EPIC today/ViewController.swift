@@ -10,7 +10,6 @@ import UIKit
 import AlamofireImage
 import Alamofire
 import SwiftyJSON
-import Onboard
 import CoreLocation
 
 
@@ -95,6 +94,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         // Ask for Authorisation from the User.
         configureLocationServices()
         
+        let defaults = UserDefaults.standard
+        let userHasOnboarded =  defaults.bool(forKey: "userHasOnboarded")
+        
+        if userHasOnboarded == false {
+            presentAnnotation()
+        }
+        
         //scrollView
         self.scrollView.minimumZoomScale = 1.0
         self.scrollView.maximumZoomScale = 2.0
@@ -111,10 +117,22 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         
         singleTap.require(toFail: doubleTap)
         
+        print("viewDidLoad")
         loadImage(color: currentColor, date: nil)
+        
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+       
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("viewDidDisappear")
+    }
     
     @IBAction func infoButton(_ sender: AnyObject) {
         presentAnnotation()

@@ -35,6 +35,10 @@ class AnnotationViewController: SpotlightViewController {
         case 3:
             spotlightView.move(Spotlight.Oval(center: CGPoint(x: screenSize.width / 2, y: screenSize.height / 2 + 32), diameter: screenSize.width ), moveType: .disappear)
         case 4:
+            
+            let defaults = UserDefaults.standard
+            defaults.set(true, forKey: "userHasOnboarded")
+            
             dismiss(animated: true, completion: nil)
         default:
             break
