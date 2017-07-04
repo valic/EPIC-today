@@ -2,20 +2,23 @@ PODS:
   - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - Gecco (1.0.0)
   - Onboard (2.3.1)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
   - AlamofireImage (~> 3.1)
+  - Gecco
   - Onboard
   - SwiftyJSON (~> 3.1)
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  Gecco: e662f949821e742997787bad7b730ccc0052e43c
   Onboard: b6871f25ac753175b2ab9a362fb2feb26a81a311
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 6a8af91f9119033b44171d5c4aca2fae24e19c3f
+PODFILE CHECKSUM: 4fba6cea78ff949a4b99eeff0fe9156af00560b4
 
 COCOAPODS: 1.2.1

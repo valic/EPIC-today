@@ -21,7 +21,7 @@ class EPIC {
     var distanceToEarth:Double
     var distanceToSun:Double
     var sevAngle:Double
-
+    
     
     init(imageName:String, urlString:String, date:Date, distanceToEarth:Double, distanceToSun:Double, sevAngle:Double) {
         self.imageName = imageName
@@ -31,7 +31,6 @@ class EPIC {
         self.distanceToSun = distanceToSun
         self.sevAngle = sevAngle
     }
-    
 }
 
 class ECI {
@@ -72,7 +71,7 @@ extension JSON {
 
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewDelegate {
-
+    
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var imageActivityIndicator: UIActivityIndicatorView!
@@ -81,14 +80,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     @IBOutlet var distanceToSunLabbel: UILabel!
     @IBOutlet var sevAngleLabel: UILabel!
     
-
+    
     let locationManager = CLLocationManager()
     
     var infoViewIsHidden:Bool = true
     var currentDate = Date()
     var currentColor = ColorImagery.natural
     var errorSubview:ErrorSubview?
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,6 +112,34 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         singleTap.require(toFail: doubleTap)
         
         loadImage(color: currentColor, date: nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+/*loseErrorSubview()
+ 
+ self.errorSubview = ErrorSubview(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
+ self.errorSubview?.errorStringLabel.text = error.localizedDescription
+ self.errorSubview?.reloadPressed.addTarget(self, action: #selector(reload(_:)), for: UIControlEvents.touchUpInside)
+ 
+ self.view.addSubview(self.errorSubview!)*/
+        
+        let onboardingVC = generatePurchasePaging().view
+        onboardingVC?.frame = CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)
+ 
+       // self.view.addSubview(onboardingVC!)
+
+        
+        }
+    
+    @IBAction func buttonPressed(_ sender: AnyObject) {
+        presentAnnotation()
+    }
+    
+    func presentAnnotation() {
+        let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "Annotation") as! AnnotationViewController
+        viewController.alpha = 0.5
+        present(viewController, animated: true, completion: nil)
     }
     
     func getEpic(color: ColorImagery, date: Date?, completion: @escaping  ([EPIC]) -> ()) {
@@ -285,6 +312,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     
     //MARK: TapGesture
     func singleTapped(recognizer: UITapGestureRecognizer) {
+        
+        print("singleTapped")
         if infoView.isHidden {
             setView(view: infoView, hidden: false)
             infoViewIsHidden = false
@@ -304,6 +333,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     func doubleTapped(recognizer: UITapGestureRecognizer) {
+        print("doubleTapped")
         
         if scrollView.zoomScale == 1 {
             scrollView.zoom(to: zoomRectForScale(scale: scrollView.maximumZoomScale, center: recognizer.location(in: recognizer.view)), animated: true)
@@ -337,20 +367,20 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         zoomRect.origin.y = newCenter.y - (zoomRect.size.height / 2.0)
         return zoomRect
     }
- 
+    
     //MARK: Share
     @IBAction func shareButton(_ sender: Any) {
         
         // image to share
         if let imageToShare = self.imageView.image {
-        
-        let shareText = "Изображение земли"
             
-        // set up activity view controller
-        let activityViewController = UIActivityViewController(activityItems: [imageToShare, shareText], applicationActivities: nil)
-        
-        // present the view controller
-        self.present(activityViewController, animated: true, completion: nil)
+            let shareText = "Изображение земли"
+            
+            // set up activity view controller
+            let activityViewController = UIActivityViewController(activityItems: [imageToShare, shareText], applicationActivities: nil)
+            
+            // present the view controller
+            self.present(activityViewController, animated: true, completion: nil)
         }
     }
     
@@ -402,7 +432,72 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     func reload(_ sender:UIButton) {
         loadImage(color: currentColor, date: nil)
     }
+    
+    func generatePurchasePaging() -> OnboardingViewController {
+        
+        
+        // Initialize onboarding view controller
+        var onboardingVC = OnboardingViewController()
+        
+        // Create slides
+        let firstPage = OnboardingContentViewController.content(withTitle: "Welcome To The App!", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image1"), buttonText: nil, action: nil)
+        
+        let secondPage = OnboardingContentViewController.content(withTitle: "Step 1", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image2"), buttonText: nil, action: nil)
+        
+        let thirdPage = OnboardingContentViewController.content(withTitle: "Step 2:", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image3"), buttonText: nil, action: nil)
+        
+        let fourthPage = OnboardingContentViewController.content(withTitle: "Step 3", body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ut.", image: UIImage(named: "image4"), buttonText: nil, action: self.removeFromParentViewController)
+        
+        // Define onboarding view controller properties
+        onboardingVC = OnboardingViewController.onboard(withBackgroundImage: UIImage(named: "giga-banner"), contents: [firstPage, secondPage, thirdPage, fourthPage])
+        onboardingVC.shouldFadeTransitions = true
+        onboardingVC.shouldMaskBackground = false
+        onboardingVC.shouldBlurBackground = false
+        onboardingVC.fadePageControlOnLastPage = true
+        onboardingVC.pageControl.pageIndicatorTintColor = UIColor.darkGray
+        onboardingVC.pageControl.currentPageIndicatorTintColor = UIColor.white
+        onboardingVC.skipButton.setTitleColor(UIColor.black, for: .normal)
+        onboardingVC.allowSkipping = true
+        onboardingVC.fadeSkipButtonOnLastPage = true
+        
+  
+        
+        return onboardingVC
+        
+        
+        /*
+        
+        let firstPage = OnboardingContentViewController(title: "Page Title", body: "Page body goes here.", image: nil, buttonText: "Text For Button") { () -> Void in
+            // do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
+  
+        }
+        let firstPage2 = OnboardingContentViewController(title: "Page Title 2", body: "Page body goes here.", image: nil, buttonText: "Text For Button") { () -> Void in
+            // do something here when users press the button, like ask for location services permissions, register for push notifications, connect to social media, or finish the onboarding process
+            
+        }
+        
+        firstPage.actionButton.addTarget(self, action: #selector(handleButtonPressed(_:)), for: .touchUpInside)
+        firstPage2.actionButton.addTarget(self, action: #selector(handleButtonPressed(_:)), for: .touchUpInside)
 
+        let onboardingVC = OnboardingViewController(backgroundImage: nil, contents: [firstPage, firstPage2])
+        
+        // Customize Onboard viewController
+   //     onboardingVC?.skipButton.setTitleColor(UIColor.black, for: .normal)
+    //    onboardingVC?.allowSkipping = false
+     //   onboardingVC?.fadeSkipButtonOnLastPage = true
+        
+
+        
+        
+        return onboardingVC!*/
+    }
+    
+    func handleButtonPressed(_ sender:UIButton) {
+        // Show the view that needs showing
+        
+        print("Show the view that needs showing")
+    }
+    
 }
 
 

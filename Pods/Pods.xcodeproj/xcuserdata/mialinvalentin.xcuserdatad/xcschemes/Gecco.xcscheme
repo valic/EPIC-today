@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = 'FEDE2E649A8A36F891CF70EE9BBE6322'
-               BlueprintName = 'SwiftyJSON'
+               BlueprintIdentifier = '044D24CD957C7BD215506693AF4433A7'
+               BlueprintName = 'Gecco'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'SwiftyJSON.framework'>
+               BuildableName = 'Gecco.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
