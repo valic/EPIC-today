@@ -395,6 +395,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             // set up activity view controller
             let activityViewController = UIActivityViewController(activityItems: [imageToShare, shareText], applicationActivities: nil)
             
+            activityViewController.excludedActivityTypes = [.assignToContact]
+            
             // present the view controller
             self.present(activityViewController, animated: true, completion: nil)
         }

@@ -8,7 +8,7 @@
 "BQ4-yh-ox6.normalTitle" = "Що таке EPIC?";
 
 /* Class = "UILabel"; text = "Image type"; ObjectID = "CY3-Xf-c0A"; */
-"CY3-Xf-c0A.text" = "Color type imagery.";
+"CY3-Xf-c0A.text" = "Тип зображення";
 
 /* Class = "UILabel"; text = "Distance to Earth:"; ObjectID = "Jhd-yH-mpW"; */
 "Jhd-yH-mpW.text" = "Відстань до Землі:";
