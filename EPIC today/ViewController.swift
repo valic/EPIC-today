@@ -80,6 +80,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     @IBOutlet var distanceToSunLabbel: UILabel!
     @IBOutlet var sevAngleLabel: UILabel!
     
+    var currentEpic : EPIC?
+    
     
     let locationManager = CLLocationManager()
     
@@ -227,6 +229,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         getEpic(color: color, date: date) { (getEpic : [EPIC]) in
             
             if !getEpic.isEmpty {
+                
+                self.currentEpic = getEpic[0]
                 
                 let URL = NSURL(string: getEpic[0].urlString)!
                 
@@ -377,7 +381,16 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         // image to share
         if let imageToShare = self.imageView.image {
             
-            let shareText = "Изображение земли"
+            var shareText = ""
+            
+            if let epic = self.currentEpic {
+            
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateFormat = "EEEE, MMM d, yyyy"
+                
+            shareText = dateFormatter.string(from: epic.date)
+                
+            }
             
             // set up activity view controller
             let activityViewController = UIActivityViewController(activityItems: [imageToShare, shareText], applicationActivities: nil)
