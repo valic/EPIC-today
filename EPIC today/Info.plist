@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>ФФФ</string>
+	<string>Доступ к местоположению необходим, для загрузки фотографии данной местности</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Доступ к медиатеки необходим для сохранения фотографии</string>
 	<key>UILaunchStoryboardName</key>

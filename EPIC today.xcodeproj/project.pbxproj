@@ -22,6 +22,10 @@
 		0BD08B618E563037A23B7ECD /* Pods-EPIC today.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPIC today.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EPIC today/Pods-EPIC today.debug.xcconfig"; sourceTree = "<group>"; };
 		CBD2202085C0264CC92236EE /* Pods-EPIC today.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EPIC today.release.xcconfig"; path = "Pods/Target Support Files/Pods-EPIC today/Pods-EPIC today.release.xcconfig"; sourceTree = "<group>"; };
 		D0A25CC6121110E0EA5D5DB9 /* Pods_EPIC_today.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EPIC_today.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		FB1A9E6D1F0D1E9500B4D77F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/Main.strings; sourceTree = "<group>"; };
+		FB1A9E6E1F0D1E9600B4D77F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB1A9E6F1F0D1EAB00B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		FB1A9E701F0D1EAB00B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB2AD4961EFB0FBC009045A4 /* EPIC today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EPIC today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -244,6 +248,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB2AD49E1EFB0FBC009045A4 /* Base */,
+				FB1A9E6D1F0D1E9500B4D77F /* uk */,
+				FB1A9E6F1F0D1EAB00B4D77F /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -252,6 +258,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB2AD4A31EFB0FBC009045A4 /* Base */,
+				FB1A9E6E1F0D1E9600B4D77F /* uk */,
+				FB1A9E701F0D1EAB00B4D77F /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -263,6 +271,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -313,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

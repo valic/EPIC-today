@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Date."; ObjectID = "7D2-2C-MoS"; */
+"7D2-2C-MoS.text" = "Date.";
+
+/* Class = "UILabel"; text = "Distance to Sun:"; ObjectID = "7q4-Ur-uKc"; */
+"7q4-Ur-uKc.text" = "Distance to Sun:";
+
+/* Class = "UIButton"; normalTitle = "What is EPIC?"; ObjectID = "BQ4-yh-ox6"; */
+"BQ4-yh-ox6.normalTitle" = "What is EPIC?";
+
+/* Class = "UILabel"; text = "Color type imagery."; ObjectID = "CY3-Xf-c0A"; */
+"CY3-Xf-c0A.text" = "Color type imagery.";
+
+/* Class = "UILabel"; text = "Distance to Earth:"; ObjectID = "Jhd-yH-mpW"; */
+"Jhd-yH-mpW.text" = "Distance to Earth:";
+
+/* Class = "UILabel"; text = "1,546,445 km"; ObjectID = "O38-dH-qxV"; */
+"O38-dH-qxV.text" = "1,546,445 km";
+
+/* Class = "UILabel"; text = "Appear spotlight on view."; ObjectID = "Ojl-Do-DV9"; */
+"Ojl-Do-DV9.text" = "Appear spotlight on view.";
+
+/* Class = "UILabel"; text = "SEV Angle:"; ObjectID = "PAO-Gt-I0R"; */
+"PAO-Gt-I0R.text" = "SEV Angle:";
+
+/* Class = "UILabel"; text = "Single tap to animate available images."; ObjectID = "R2s-7f-Udp"; */
+"R2s-7f-Udp.text" = "Single tap to animate available images.";
+
+/* Class = "UILabel"; text = "Double tap for high resolution zoom mode."; ObjectID = "cG1-MU-W9U"; */
+"cG1-MU-W9U.text" = "Double tap for high resolution zoom mode.";
+
+/* Class = "UILabel"; text = "1,546,445 km"; ObjectID = "lY1-D3-JGa"; */
+"lY1-D3-JGa.text" = "1,546,445 km";
+
+/* Class = "UILabel"; text = "9.95°"; ObjectID = "p0Y-w4-IaO"; */
+"p0Y-w4-IaO.text" = "9.95°";
