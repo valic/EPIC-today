@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.2" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd">
+  <file original="EPIC today/Base.lproj/Info.plist" source-language="en" datatype="plaintext" target-language="uk">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3" build-num="8E162"/>
+    </header>
+    <body>
+      <trans-unit id="CFBundleName">
+        <source>$(PRODUCT_NAME)</source>
+      </trans-unit>
+      <trans-unit id="CFBundleShortVersionString">
+        <source>1.0</source>
+      </trans-unit>
+    </body>
+  </file>
+  <file original="EPIC today/Base.lproj/LaunchScreen.storyboard" source-language="en" datatype="plaintext" target-language="uk">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3" build-num="8E162"/>
+    </header>
+    <body/>
+  </file>
+  <file original="EPIC today/Base.lproj/Main.storyboard" source-language="en" datatype="plaintext" target-language="uk">
+    <header>
+      <tool tool-id="com.apple.dt.xcode" tool-name="Xcode" tool-version="8.3" build-num="8E162"/>
+    </header>
+    <body>
+      <trans-unit id="7D2-2C-MoS.text">
+        <source>Date</source>
+        <target>Date.</target>
+        <note>Class = "UILabel"; text = "Date"; ObjectID = "7D2-2C-MoS";</note>
+      </trans-unit>
+      <trans-unit id="7q4-Ur-uKc.text">
+        <source>Distance to Sun:</source>
+        <target>Distance to Sun:</target>
+        <note>Class = "UILabel"; text = "Distance to Sun:"; ObjectID = "7q4-Ur-uKc";</note>
+      </trans-unit>
+      <trans-unit id="BQ4-yh-ox6.normalTitle">
+        <source>What is EPIC?</source>
+        <target>What is EPIC?</target>
+        <note>Class = "UIButton"; normalTitle = "What is EPIC?"; ObjectID = "BQ4-yh-ox6";</note>
+      </trans-unit>
+      <trans-unit id="CY3-Xf-c0A.text">
+        <source>Image type</source>
+        <target>Color type imagery.</target>
+        <note>Class = "UILabel"; text = "Image type"; ObjectID = "CY3-Xf-c0A";</note>
+      </trans-unit>
+      <trans-unit id="Jhd-yH-mpW.text">
+        <source>Distance to Earth:</source>
+        <target>Distance to Earth:</target>
+        <note>Class = "UILabel"; text = "Distance to Earth:"; ObjectID = "Jhd-yH-mpW";</note>
+      </trans-unit>
+      <trans-unit id="O38-dH-qxV.text">
+        <source>1,546,445 km</source>
+        <target>1,546,445 km</target>
+        <note>Class = "UILabel"; text = "1,546,445 km"; ObjectID = "O38-dH-qxV";</note>
+      </trans-unit>
+      <trans-unit id="Ojl-Do-DV9.text">
+        <source>Share</source>
+        <target>Appear spotlight on view.</target>
+        <note>Class = "UILabel"; text = "Share"; ObjectID = "Ojl-Do-DV9";</note>
+      </trans-unit>
+      <trans-unit id="PAO-Gt-I0R.text">
+        <source>SEV Angle:</source>
+        <target>SEV Angle:</target>
+        <note>Class = "UILabel"; text = "SEV Angle:"; ObjectID = "PAO-Gt-I0R";</note>
+      </trans-unit>
+      <trans-unit id="R2s-7f-Udp.text">
+        <source>Single tap to animate available images.</source>
+        <target>Single tap to animate available images.</target>
+        <note>Class = "UILabel"; text = "Single tap to animate available images."; ObjectID = "R2s-7f-Udp";</note>
+      </trans-unit>
+      <trans-unit id="cG1-MU-W9U.text">
+        <source>Double tap for high resolution zoom mode.</source>
+        <target>Double tap for high resolution zoom mode.</target>
+        <note>Class = "UILabel"; text = "Double tap for high resolution zoom mode."; ObjectID = "cG1-MU-W9U";</note>
+      </trans-unit>
+      <trans-unit id="lY1-D3-JGa.text">
+        <source>1,546,445 km</source>
+        <target>1,546,445 km</target>
+        <note>Class = "UILabel"; text = "1,546,445 km"; ObjectID = "lY1-D3-JGa";</note>
+      </trans-unit>
+      <trans-unit id="p0Y-w4-IaO.text">
+        <source>9.95°</source>
+        <target>9.95°</target>
+        <note>Class = "UILabel"; text = "9.95°"; ObjectID = "p0Y-w4-IaO";</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

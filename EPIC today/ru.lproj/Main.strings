@@ -23,5 +23,5 @@
 "R2s-7f-Udp.text" = "Одиночное нажатие для отображения информаци.";
 
 /* Class = "UILabel"; text = "Double tap for high resolution zoom mode."; ObjectID = "cG1-MU-W9U"; */
-"cG1-MU-W9U.text" = "Двойное нажатие для увлечения изображения.";
+"cG1-MU-W9U.text" = "Двойное нажатие для увеличения изображения.";
 
