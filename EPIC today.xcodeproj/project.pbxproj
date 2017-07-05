@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03BA31C00B3D080C21640097 /* Pods_EPIC_today.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0A25CC6121110E0EA5D5DB9 /* Pods_EPIC_today.framework */; };
+		FB1A9E731F0D21F900B4D77F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB1A9E751F0D21F900B4D77F /* InfoPlist.strings */; };
 		FB2AD49A1EFB0FBC009045A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */; };
 		FB2AD49C1EFB0FBC009045A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */; };
 		FB2AD49F1EFB0FBC009045A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */; };
@@ -26,13 +27,16 @@
 		FB1A9E6E1F0D1E9600B4D77F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB1A9E6F1F0D1EAB00B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FB1A9E701F0D1EAB00B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		FB1A9E741F0D21F900B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB1A9E761F0D28ED00B4D77F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		FB1A9E781F0D28F800B4D77F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = uk; path = uk.lproj/Info.plist; sourceTree = "<group>"; };
+		FB1A9E791F0D28F800B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/Info.plist; sourceTree = "<group>"; };
 		FB2AD4961EFB0FBC009045A4 /* EPIC today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EPIC today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FB2AD49E1EFB0FBC009045A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB2AD4A31EFB0FBC009045A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		FB2AD4A51EFB0FBC009045A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB3A2F531F0BE88D0077F8F6 /* AnnotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationViewController.swift; sourceTree = "<group>"; };
 		FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSubview.swift; sourceTree = "<group>"; };
 		FBF236611F0A55B300D6F05A /* ErrorSubview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorSubview.xib; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		FB2AD4981EFB0FBC009045A4 /* EPIC today */ = {
 			isa = PBXGroup;
 			children = (
+				FB1A9E751F0D21F900B4D77F /* InfoPlist.strings */,
 				FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */,
 				FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */,
 				FB3A2F531F0BE88D0077F8F6 /* AnnotationViewController.swift */,
@@ -95,7 +100,7 @@
 				FB8FD02D1F0B00B800705A3B /* ErrorSubview */,
 				FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */,
 				FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */,
-				FB2AD4A51EFB0FBC009045A4 /* Info.plist */,
+				FB1A9E771F0D28ED00B4D77F /* Info.plist */,
 			);
 			path = "EPIC today";
 			sourceTree = "<group>";
@@ -156,6 +161,8 @@
 			knownRegions = (
 				en,
 				Base,
+				uk,
+				ru,
 			);
 			mainGroup = FB2AD48D1EFB0FBC009045A4;
 			productRefGroup = FB2AD4971EFB0FBC009045A4 /* Products */;
@@ -176,6 +183,7 @@
 				FB2AD4A41EFB0FBC009045A4 /* LaunchScreen.storyboard in Resources */,
 				FB2AD4A11EFB0FBC009045A4 /* Assets.xcassets in Resources */,
 				FB2AD49F1EFB0FBC009045A4 /* Main.storyboard in Resources */,
+				FB1A9E731F0D21F900B4D77F /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +252,24 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		FB1A9E751F0D21F900B4D77F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB1A9E741F0D21F900B4D77F /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		FB1A9E771F0D28ED00B4D77F /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB1A9E761F0D28ED00B4D77F /* Base */,
+				FB1A9E781F0D28F800B4D77F /* uk */,
+				FB1A9E791F0D28F800B4D77F /* ru */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
 		FB2AD49D1EFB0FBC009045A4 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

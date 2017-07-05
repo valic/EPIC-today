@@ -52,38 +52,38 @@
                                 <rect key="frame" x="8" y="483" width="359" height="79"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to Earth:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jhd-yH-mpW">
-                                        <rect key="frame" x="16" y="4" width="137" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="8" y="8.5" width="129.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,546,445 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lY1-D3-JGa">
-                                        <rect key="frame" x="157" y="4" width="105" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="141.5" y="9" width="99.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance to Sun:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7q4-Ur-uKc">
-                                        <rect key="frame" x="16" y="29" width="126" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="8" y="32" width="119" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1,546,445 km" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O38-dH-qxV">
-                                        <rect key="frame" x="146" y="29" width="105" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="131" y="32.5" width="99.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SEV Angle:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PAO-Gt-I0R">
-                                        <rect key="frame" x="16" y="54" width="85" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="8" y="55.5" width="80" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9.95°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p0Y-w4-IaO">
-                                        <rect key="frame" x="105" y="54" width="42" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="92" y="56" width="39.5" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -100,7 +100,7 @@
                                     <constraint firstItem="PAO-Gt-I0R" firstAttribute="leading" secondItem="Jhd-yH-mpW" secondAttribute="leading" id="fAj-8V-1Xc"/>
                                     <constraint firstAttribute="bottom" secondItem="PAO-Gt-I0R" secondAttribute="bottom" constant="4" id="op8-rB-wRp"/>
                                     <constraint firstItem="lY1-D3-JGa" firstAttribute="centerY" secondItem="Jhd-yH-mpW" secondAttribute="centerY" id="pON-LI-z2U"/>
-                                    <constraint firstItem="PAO-Gt-I0R" firstAttribute="leading" secondItem="38Y-BB-ZiE" secondAttribute="leading" constant="16" id="xfR-sk-a8e"/>
+                                    <constraint firstItem="PAO-Gt-I0R" firstAttribute="leading" secondItem="38Y-BB-ZiE" secondAttribute="leading" constant="8" id="xfR-sk-a8e"/>
                                     <constraint firstItem="p0Y-w4-IaO" firstAttribute="centerY" secondItem="PAO-Gt-I0R" secondAttribute="centerY" id="y9E-cc-MXZ"/>
                                 </constraints>
                             </view>
@@ -108,7 +108,7 @@
                                 <rect key="frame" x="16" y="562" width="343" height="33"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BQ4-yh-ox6">
-                                        <rect key="frame" x="8" y="0.0" width="107" height="33"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="107" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="What is EPIC?"/>
                                         <connections>
@@ -116,7 +116,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="401-XN-G1R">
-                                        <rect key="frame" x="310" y="0.0" width="25" height="33"/>
+                                        <rect key="frame" x="318" y="0.0" width="25" height="33"/>
                                         <state key="normal" image="info"/>
                                         <connections>
                                             <action selector="infoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wXH-hA-3K5"/>
@@ -124,13 +124,13 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="401-XN-G1R" secondAttribute="trailing" constant="8" id="6JM-9B-m8F"/>
+                                    <constraint firstAttribute="trailing" secondItem="401-XN-G1R" secondAttribute="trailing" id="6JM-9B-m8F"/>
                                     <constraint firstAttribute="bottom" secondItem="401-XN-G1R" secondAttribute="bottom" id="C7O-VV-E7a"/>
                                     <constraint firstAttribute="bottom" secondItem="BQ4-yh-ox6" secondAttribute="bottom" id="KgO-ZI-RNw"/>
                                     <constraint firstAttribute="height" constant="33" id="P8G-dJ-u0M"/>
                                     <constraint firstItem="BQ4-yh-ox6" firstAttribute="top" secondItem="77M-7B-LWN" secondAttribute="top" id="lhI-HR-BuA"/>
                                     <constraint firstItem="401-XN-G1R" firstAttribute="top" secondItem="77M-7B-LWN" secondAttribute="top" id="mdY-eJ-ziF"/>
-                                    <constraint firstItem="BQ4-yh-ox6" firstAttribute="leading" secondItem="77M-7B-LWN" secondAttribute="leading" constant="8" id="s1r-qR-zUJ"/>
+                                    <constraint firstItem="BQ4-yh-ox6" firstAttribute="leading" secondItem="77M-7B-LWN" secondAttribute="leading" id="s1r-qR-zUJ"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -219,8 +219,8 @@
                                 <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color type imagery." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-Xf-c0A">
-                                <rect key="frame" x="16" y="75" width="155" height="23"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color type." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-Xf-c0A">
+                                <rect key="frame" x="16" y="75" width="87" height="23"/>
                                 <fontDescription key="fontDescription" name="Futura-Medium" family="Futura" pointSize="17"/>
                                 <color key="textColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
