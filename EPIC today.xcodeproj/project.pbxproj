@@ -15,6 +15,7 @@
 		FB2AD4A41EFB0FBC009045A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */; };
 		FB3A2F541F0BE88D0077F8F6 /* AnnotationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3A2F531F0BE88D0077F8F6 /* AnnotationViewController.swift */; };
 		FB786BC01F05B6860010C6CC /* ErrorSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */; };
+		FB8C7B511F4CE68600FD27D8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = FB8C7B531F4CE68600FD27D8 /* InfoPlist.strings */; };
 		FBF236621F0A55B300D6F05A /* ErrorSubview.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBF236611F0A55B300D6F05A /* ErrorSubview.xib */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +28,6 @@
 		FB1A9E6F1F0D1EAB00B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		FB1A9E701F0D1EAB00B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		FB1A9E761F0D28ED00B4D77F /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
-		FB1A9E781F0D28F800B4D77F /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = uk; path = uk.lproj/Info.plist; sourceTree = "<group>"; };
-		FB1A9E791F0D28F800B4D77F /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = ru; path = ru.lproj/Info.plist; sourceTree = "<group>"; };
 		FB2AD4961EFB0FBC009045A4 /* EPIC today.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EPIC today.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2AD4991EFB0FBC009045A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB2AD49B1EFB0FBC009045A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -37,6 +36,9 @@
 		FB2AD4A31EFB0FBC009045A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3A2F531F0BE88D0077F8F6 /* AnnotationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnnotationViewController.swift; sourceTree = "<group>"; };
 		FB786BBF1F05B6860010C6CC /* ErrorSubview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorSubview.swift; sourceTree = "<group>"; };
+		FB8C7B521F4CE68600FD27D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB8C7B541F4CE68900FD27D8 /* uk */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = uk; path = uk.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		FB8C7B551F4CE68A00FD27D8 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		FBF236611F0A55B300D6F05A /* ErrorSubview.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ErrorSubview.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,6 +100,7 @@
 				FB2AD4A01EFB0FBC009045A4 /* Assets.xcassets */,
 				FB2AD4A21EFB0FBC009045A4 /* LaunchScreen.storyboard */,
 				FB1A9E771F0D28ED00B4D77F /* Info.plist */,
+				FB8C7B531F4CE68600FD27D8 /* InfoPlist.strings */,
 			);
 			path = "EPIC today";
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 				FB2AD4A41EFB0FBC009045A4 /* LaunchScreen.storyboard in Resources */,
 				FB2AD4A11EFB0FBC009045A4 /* Assets.xcassets in Resources */,
 				FB2AD49F1EFB0FBC009045A4 /* Main.storyboard in Resources */,
+				FB8C7B511F4CE68600FD27D8 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,8 +256,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				FB1A9E761F0D28ED00B4D77F /* Base */,
-				FB1A9E781F0D28F800B4D77F /* uk */,
-				FB1A9E791F0D28F800B4D77F /* ru */,
 			);
 			name = Info.plist;
 			sourceTree = "<group>";
@@ -276,6 +278,16 @@
 				FB1A9E701F0D1EAB00B4D77F /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		FB8C7B531F4CE68600FD27D8 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FB8C7B521F4CE68600FD27D8 /* Base */,
+				FB8C7B541F4CE68900FD27D8 /* uk */,
+				FB8C7B551F4CE68A00FD27D8 /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -323,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -368,7 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -73,16 +73,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var imageView: UIImageView!
-    @IBOutlet var imageActivityIndicator: UIActivityIndicatorView!
     @IBOutlet var infoView: UIView!
     @IBOutlet var bottomView: UIView!
+    @IBOutlet var colorImageryLabel: UILabel!
     @IBOutlet var distanceToEarthLabbel: UILabel!
     @IBOutlet var distanceToSunLabbel: UILabel!
     @IBOutlet var sevAngleLabel: UILabel!
     
     var currentEpic : EPIC?
-    
-    
+
     let locationManager = CLLocationManager()
     
     var infoViewIsHidden:Bool = true
@@ -90,18 +89,28 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     var currentColor = ColorImagery.natural
     var errorSubview:ErrorSubview?
     
+    var downloader = ImageDownloader(
+        
+        configuration: ImageDownloader.defaultURLSessionConfiguration(),
+        downloadPrioritization: .fifo,
+        maximumActiveDownloads: 2,
+        imageCache: AutoPurgingImageCache(memoryCapacity: 2 * 1024 * 1024, preferredMemoryUsageAfterPurge: UInt64(0.5 * 1024 * 1024))
+    )
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Ask for Authorisation from the User.
         configureLocationServices()
         
-        let defaults = UserDefaults.standard
-        let userHasOnboarded =  defaults.bool(forKey: "userHasOnboarded")
-        
+      //  let defaults = UserDefaults.standard
+     //   let userHasOnboarded =  defaults.bool(forKey: "userHasOnboarded")
+       
+        /*
         if userHasOnboarded == false {
             presentAnnotation()
         }
+ */
         
         //scrollView
         self.scrollView.minimumZoomScale = 1.0
@@ -119,8 +128,14 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         
         singleTap.require(toFail: doubleTap)
 
-        loadImage(color: currentColor, date: nil)
+      loadImage(color: currentColor)
+  //      self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Earth"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.colorImagery))
         
+
+    }
+    
+    deinit {
+        self.imageView.image = nil
     }
     
     @IBAction func infoButton(_ sender: AnyObject) {
@@ -139,7 +154,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         present(viewController, animated: true, completion: nil)
     }
     
-    func getEpic(color: ColorImagery, date: Date?, completion: @escaping  ([EPIC]) -> ()) {
+    func getEpic(color: ColorImagery, completion: @escaping  ([EPIC]) -> ()) {
         
         var epicArray = [EPIC]()
         var urlString = ""
@@ -149,12 +164,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             urlString = "https://api.nasa.gov/EPIC/api/natural/"
         case .enhanced:
             urlString = "https://api.nasa.gov/EPIC/api/enhanced/"
-        }
-        
-        if date != nil {
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd"
-            urlString = urlString + "date/" + dateFormatter.string(from: date!)
         }
         
         let url = URL(string: urlString)!
@@ -177,8 +186,8 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                     
                     let coordinates = CLLocation(latitude: lat, longitude: lon)
                     
-                    var distance = Int()
                     
+                    var distance = Int()
                     if let locationCurent = self.locationManager.location{
                         distance = Int((locationCurent.distance(from: coordinates)))
                     }else{
@@ -189,7 +198,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                         jsonCurrent = item
                         distanceMin = distance
                     }
-                    
                 }
                 
                 let dscovr = ECI(x: jsonCurrent["dscovr_j2000_position"]["x"].doubleValue,
@@ -221,12 +229,38 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         }
     }
     
-    func loadImage(color: ColorImagery, date: Date?) {
+    //MARK: Load
+    func loadImage(color: ColorImagery) {
+        
+      //  self.colorImageryLabel.layer.removeAllAnimations()
+        self.view.layer.removeAllAnimations()
+
+        switch currentColor {
+        case .natural:
+            self.colorImageryLabel.text = "Natural Color"
+        case .enhanced:
+            self.colorImageryLabel.text = "Enhanced Color"
+        }
+        
+        
+        self.colorImageryLabel.alpha = 1.0
+     //   self.colorImageryLabel.isHidden = false
+        
+        UIView.animate(withDuration: 2.0, delay: 0.75, options: .curveLinear,
+                       animations: {self.colorImageryLabel.alpha = 0},
+                       completion: { _ in //self.colorImageryLabel.isHidden = true
+                        //Do anything else that depends on this animation ending
+        })
+        
         
         // Start load animating
-        self.imageActivityIndicator.startAnimating()
+        let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView.init(activityIndicatorStyle: .gray)
+        activityIndicator.color = UIColor(red:0.00, green:0.48, blue:1.00, alpha:1.0)
+        let refreshBarButton = UIBarButtonItem(customView: activityIndicator)
+        self.navigationItem.leftBarButtonItem = refreshBarButton
+        activityIndicator.startAnimating()
         
-        getEpic(color: color, date: date) { (getEpic : [EPIC]) in
+        getEpic(color: color) { (getEpic : [EPIC]) in
             
             if !getEpic.isEmpty {
                 
@@ -251,28 +285,29 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
                 self.imageView.contentMode = .scaleAspectFit
                 
                 // Download image
-                self.imageView.af_setImage(withURL: URL as URL, progress: {NSProgress in
-                    
-                    if NSProgress.fractionCompleted == 1 {
-                        self.imageActivityIndicator.stopAnimating()
-                    }
-                    else{
-                        self.imageActivityIndicator.startAnimating()
-                    }
-                }, completion: { response in
-                    
-                    if let error = response.result.error {
-                        self.showErrorSubview(error: error)
-                    }
+                let urlRequest = URLRequest(url: URL as URL)
+
+                self.downloader.download(urlRequest) { response in
                     if response.result.isSuccess {
-                        self.imageActivityIndicator.stopAnimating()
+                        if let image = response.result.value{
+                            if let imageData: Data = UIImageJPEGRepresentation(image, 1.0) {
+                                self.imageView.image = UIImage(data: imageData)
+                            }
+                        }
+                        
+                        // Setting top bar
+                        switch self.currentColor {
+                        case .natural:
+                            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Earth"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.colorImagery))
+                        case .enhanced:
+                            self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "Earth"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.colorImagery))
+                        }
                         self.closeErrorSubview()
                     }
-                })
+                }
             }
         }
     }
-    
     
     //MARK: Location
     func configureLocationServices() {
@@ -287,8 +322,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         case .notDetermined:
             manager.requestWhenInUseAuthorization()
             break
-        case .authorizedAlways, .authorizedWhenInUse:
+        case .authorizedAlways:
             break
+        case .authorizedWhenInUse:
+            loadImage(color: currentColor)
         case .restricted:
             print("restricted by e.g. parental controls. User can't enable Location Services")
             break
@@ -299,10 +336,10 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        //   if let location = locations.first {
-        //  print("Current locatiom \(location)")
+          if let location = locations.first {
+          print("Current locatiom \(location)")
         
-        //   }
+          }
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
@@ -311,7 +348,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     
     //MARK: TapGesture
     func singleTapped(recognizer: UITapGestureRecognizer) {
-        
+    
         print("singleTapped")
         if infoView.isHidden {
             setView(view: infoView, hidden: false)
@@ -391,7 +428,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
             shareText = dateFormatter.string(from: epic.date)
                 
             }
-            
             // set up activity view controller
             let activityViewController = UIActivityViewController(activityItems: [imageToShare, shareText], applicationActivities: nil)
             
@@ -403,15 +439,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
         }
     }
     
-    //MART: ColorImagery
-    @IBAction func colorImagery(_ sender: Any) {
+    //MARK: ColorImagery
+    func colorImagery(_ sender: Any) {
         switch currentColor {
         case .natural:
             currentColor = .enhanced
         case .enhanced:
             currentColor = .natural
         }
-        loadImage(color: currentColor, date: nil)
+        loadImage(color: currentColor)
     }
     
     //MART: What is EPIC?
@@ -449,7 +485,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIScrollViewD
     }
     
     func reload(_ sender:UIButton) {
-        loadImage(color: currentColor, date: nil)
+        loadImage(color: currentColor)
     }
     
 

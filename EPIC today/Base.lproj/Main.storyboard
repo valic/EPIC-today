@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hLr-61-LtP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="hLr-61-LtP">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -45,9 +45,12 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="yUf-3I-IwF"/>
                                 </connections>
                             </scrollView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="8HQ-zc-e70">
-                                <rect key="frame" x="177" y="291" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Natural Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="haa-ba-QWt">
+                                <rect key="frame" x="139" y="8" width="96" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="0.84999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="38Y-BB-ZiE">
                                 <rect key="frame" x="8" y="483" width="359" height="79"/>
                                 <subviews>
@@ -136,12 +139,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="haa-ba-QWt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2hI-d8-s5f"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="77M-7B-LWN" secondAttribute="bottom" constant="8" id="7Ax-83-GPh"/>
                             <constraint firstItem="77M-7B-LWN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="EAv-CJ-wIR"/>
-                            <constraint firstItem="8HQ-zc-e70" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M33-o4-g7f"/>
+                            <constraint firstItem="haa-ba-QWt" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="IxR-JA-zrj"/>
                             <constraint firstAttribute="trailingMargin" secondItem="77M-7B-LWN" secondAttribute="trailing" id="PAw-Co-NUy"/>
                             <constraint firstItem="77M-7B-LWN" firstAttribute="top" secondItem="38Y-BB-ZiE" secondAttribute="bottom" id="QNs-pU-p2s"/>
-                            <constraint firstItem="8HQ-zc-e70" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QQI-xZ-2mn"/>
                             <constraint firstAttribute="trailing" secondItem="Yte-PG-YLs" secondAttribute="trailing" id="VNX-y8-JKG"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Zyt-Yr-vAT"/>
                             <constraint firstItem="Yte-PG-YLs" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="c9D-4a-Hw5"/>
@@ -152,11 +155,6 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="koe-UZ-oDt">
-                        <barButtonItem key="leftBarButtonItem" image="Earth" id="Ps1-4N-um5">
-                            <connections>
-                                <action selector="colorImagery:" destination="BYZ-38-t0r" id="SQ9-a9-Jxi"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="action" id="lmG-mO-yix">
                             <connections>
                                 <action selector="shareButton:" destination="BYZ-38-t0r" id="twZ-vO-4PB"/>
@@ -165,9 +163,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="bottomView" destination="77M-7B-LWN" id="n7D-23-6ya"/>
+                        <outlet property="colorImageryLabel" destination="haa-ba-QWt" id="hKd-XI-K0d"/>
                         <outlet property="distanceToEarthLabbel" destination="lY1-D3-JGa" id="8rg-bt-TfC"/>
                         <outlet property="distanceToSunLabbel" destination="O38-dH-qxV" id="V9W-sL-2P6"/>
-                        <outlet property="imageActivityIndicator" destination="8HQ-zc-e70" id="sc8-6g-EMQ"/>
                         <outlet property="imageView" destination="qjM-RG-ki9" id="eQb-oY-gWP"/>
                         <outlet property="infoView" destination="38Y-BB-ZiE" id="AyI-tz-hHT"/>
                         <outlet property="scrollView" destination="Yte-PG-YLs" id="aY5-ZK-V5p"/>
@@ -285,7 +283,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Earth" width="25" height="25"/>
         <image name="info" width="25" height="25"/>
     </resources>
 </document>
